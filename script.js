@@ -7,9 +7,9 @@ document.addEventListener("DOMContentLoaded", () => { // Getting JS Ready
         function delay(ms) {
             return new Promise(resolve => setTimeout(resolve, ms)); //
         }
-        $("#worship-btn").click(async () => {
+        $("#repent").click(async () => {
             $("smalltext").fadeOut(1000);
-            $("#worship-btn").fadeOut(1000);
+            $("#repent").fadeOut(1000);
             await delay(1000);
             $(".aftertext").append("<p>Great! You are now free of your <span class=\"goose\">goos</span>ins!</p>")
         });

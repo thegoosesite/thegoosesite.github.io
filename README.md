@@ -1,2 +1,4 @@
-== Worship the goose ==
-That's all we know.
+<center>
+<h1>The Goose Site</h1>
+</center>
+Goose...

@@ -1,0 +1,49 @@
+.welcome{
+    border-radius:12px;
+    color:black;
+    background-color: gainsboro;
+    margin:20px;
+    padding:10px;
+    display:inline-block;
+}
+body{
+    /* RESET ALL MARGINS! */
+    margin:0; 
+    padding:0;
+    /* Background colors ? */
+    background-color: rgb(243, 198, 182);
+    /* Text styles */
+    font-family: comic sans ms;
+    color:white;
+    /* Flexbox */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Takes full viewport height */
+    margin: 0;
+    /* Etc Etc Stick */
+}
+/* NO MORE SCROLLBARS!!! */
+body::-webkit-scrollbar {
+  display: none;
+}
+body {
+  scrollbar-width: none;
+}
+/* SELECTION */
+body::selection{
+    background-color: yellow;
+}
+main{
+    display:flex;
+    justify-content: center;
+}
+/* Everything else */
+h1, p, h2, h3, h4, h5{
+    padding:5px;
+    margin:0;
+    text-align:center;
+    color:black;
+}
+p{
+    font-size:21px; /* Makes text easier to read */
+}

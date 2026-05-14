@@ -27,7 +27,6 @@ body::selection{
     background-color: yellow;
 }
 main{
-    margin-top:75px;
     display:flex;
     justify-content: center;
 }

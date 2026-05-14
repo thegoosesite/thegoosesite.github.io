@@ -64,6 +64,7 @@ smalltext{
 }
 #image{
     text-align:center;
+    border-radius:20px;
 }
 #repent{
     background-color:lightcoral;

@@ -62,6 +62,9 @@ smalltext{
     -webkit-text-stroke:0.5px black;
     font-weight: bolder;
 }
+#image{
+    text-align:center;
+}
 #repent{
     background-color:lightcoral;
     border:none;
@@ -74,7 +77,7 @@ smalltext{
     transition: transform 0.3s ease;
     font-size:21px;
 }
-#worship-btn:hover{
+#repent:hover{
     background-color: rgb(249, 27, 27);
     transform: scale(1.1);
     color:white;

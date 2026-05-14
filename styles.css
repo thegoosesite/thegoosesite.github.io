@@ -44,6 +44,7 @@ smalltext{
     font-size:10px;
     padding:0;
     margin:0;
+    text-align:center;
 }
 /* Extra Scripts */
 .hello{

@@ -4,7 +4,8 @@ document.addEventListener("DOMContentLoaded", () => { // Getting JS Ready
         console.log("JS is ready!")
         console.log("Jquery is ready!")
         // Necessary goosounds
-        const sound = new Audio("./holy.mp3");
+        const goosound1 = new Audio("./holy.mp3");
+        const goosound2 = new Audio("./Win.wav");
         // A delay function! 
         function delay(ms) {
             return new Promise(resolve => setTimeout(resolve, ms)); //
@@ -13,7 +14,8 @@ document.addEventListener("DOMContentLoaded", () => { // Getting JS Ready
             $("smalltext").fadeOut(1000);
             $("#repent").fadeOut(1000);
             await delay(1000);
-            $(".aftertext").append("<p>Great! You are now free of your <span class=\"goose\">goos</span>ins!</p>")
+            $(".aftertext").append("<p>Great! You are now free of your <span class=\"goose\">goos</span>ins!</p>");
+            goosound2.play();
         });
         $(".youtube").click(async () => {
             window.location.href = "./youtube";
@@ -22,10 +24,10 @@ document.addEventListener("DOMContentLoaded", () => { // Getting JS Ready
             window.location.href = "./powerpoint";
         });
         $('.worshipper').on('click', function() {
-          sound.play();
+          goosound1.play();
         });
         $('.goose').on('click', function() {
-          sound.play();
+          goosound1.play();
         });
     });
 });

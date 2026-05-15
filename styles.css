@@ -29,6 +29,7 @@ body::selection{
 main{
     display:flex;
     justify-content: center;
+    flex-direction:column;
 }
 /* Everything else */
 h1, p, h2, h3, h4, h5{

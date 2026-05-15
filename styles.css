@@ -116,6 +116,7 @@ smalltext{
     transform: scale(1.1);
     color:white;
     -webkit-text-stroke:0 !important;
+    cursor:pointer;
 }
 .slides{
     font-family: 'Comic Sans MS';
@@ -129,6 +130,7 @@ smalltext{
     padding:7px;
 }
 .slides:hover{
+    cursor:pointer;
     background-color: royalblue;
     transform: scale(1.1);
     color:white;

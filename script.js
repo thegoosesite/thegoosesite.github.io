@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => { // Getting JS Ready
             $("#repent").fadeOut(1000);
             await delay(1000);
             $(".aftertext").append("<p>Great! You are now free of your <span class=\"goose\">goos</span>ins!</p>");
-            goosound.play();
+            goosound2.play();
         });
         $(".youtube").click(async () => {
             window.location.href = "./youtube";

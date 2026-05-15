@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", () => { // Getting JS Ready
         // Log in console...
         console.log("JS is ready!")
         console.log("Jquery is ready!")
+        // Necessary goosounds
+        const sound = new Audio("./holy.mp3");
         // A delay function! 
         function delay(ms) {
             return new Promise(resolve => setTimeout(resolve, ms)); //
@@ -18,6 +20,9 @@ document.addEventListener("DOMContentLoaded", () => { // Getting JS Ready
         });
         $(".slides").click(async () => {
             window.location.href = "./powerpoint";
+        });
+        $('.click-target').on('click', function() {
+          sound.play();
         });
     });
 });

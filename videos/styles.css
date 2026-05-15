@@ -4,3 +4,6 @@
   flex-direction:row;
   flex-wrap: wrap;
 }
+iframe {
+  margin:10px;display:inline-block
+}

@@ -132,9 +132,12 @@ smalltext{
     font-size:16px;
     padding:7px;
 }
+.worshipper{
+    transition: transform 0.5s ease;
+}
 .worshipper:hover{
     cursor:pointer;
-    border:2.5px solid black !important;
+    transform: scale(1.6);
 }
 .slides:hover{
     cursor:pointer;

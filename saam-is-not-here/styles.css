@@ -5,3 +5,7 @@
   vertical-align: top;
   display: inline-block;
 }
+main{
+  display:flex !important;
+  flex-direction:column !important;
+}

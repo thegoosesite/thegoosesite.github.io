@@ -1,5 +1,5 @@
 body{
-  cursor: url("https://cdn.custom-cursor.com/db/16873/32/origami-goose-cursor.png"), auto !important
+  cursor: url("https://cdn.custom-cursor.com/db/16873/32/origami-goose-cursor.png"), default !important
 }
 button, a{
   cursor: url("https://cdn.custom-cursor.com/db/16873/32/origami-goose-pointer.png"), pointer !important

@@ -1,7 +1,7 @@
 body{
   cursor: url("https://cdn.custom-cursor.com/db/16874/32/origami-goose-cursor.png"), default !important
 }
-button, a{
+button, a, #goose, .goose{
   cursor: url("https://cdn.custom-cursor.com/db/16873/32/origami-goose-pointer.png"), pointer !important
 }
 #image {

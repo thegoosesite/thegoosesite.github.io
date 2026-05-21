@@ -8,4 +8,12 @@
 main{
   display:flex !important;
   flex-direction:column !important;
+  justify-content:center !important;
+}
+.welcome{
+  display:flex !important;
+  flex-direction:row !important;
+  justify-content:center !important;
+  text-align:center !important;
+  
 }

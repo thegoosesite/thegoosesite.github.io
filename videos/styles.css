@@ -9,6 +9,7 @@ iframe {
 }
 #secret{
   padding:8px;
+  cursor:pointer;
 }
 #secret:hover{
   background-color:slateblue;

@@ -1,6 +1,9 @@
 body{
-  cursor: url("https://cdn.custom-cursor.com/db/16873/32/origami-goose-cursor.png")
+  cursor: url("https://cdn.custom-cursor.com/db/16873/32/origami-goose-cursor.png") !important
 }
 button, a{
-  cursor: url("https://cdn.custom-cursor.com/db/16873/32/origami-goose-pointer.png")
+  cursor: url("https://cdn.custom-cursor.com/db/16873/32/origami-goose-pointer.png") !important
+}
+#image {
+  cursor: url("https://cdn.custom-cursor.com/db/16873/32/origami-goose-pointer.png") !important
 }

@@ -1,11 +1,11 @@
 .bible{
-  background-image:url('./scroll-src.jpg');
-  font-family:'Times New Roman';
-  color:#333;
+  background-image:url('./scroll-src.jpg') !important;
+  font-family:'Times New Roman' !important;
+  color:#333 !important;
   background-color:#F0E4D1; /* Not really needed, just in case bg doesn't load */
-  border:none;
-  border-radius:0;
-  text-align:left
+  border:0px solid transparent !important;
+  border-radius:0px !important;
+  text-align:left !important;
 }
 .main{
   padding: 20px !important;

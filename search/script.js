@@ -1,4 +1,5 @@
-const PAGES = [
+document.addEventListener("DOMContentLoaded", function () {
+  const PAGES = [
   {
       title: "Home Page",
       url: "https://worshipthegoose.github.io",
@@ -78,3 +79,5 @@ function performSearch(query){
   });
 }
 
+
+});

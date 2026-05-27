@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
     title: "Dancing Monster",
     url: "https://worshipthegoose.github.io/saint-rainbowhairs",
     content: "Secret page... Saint Rainbowhairs",
-    keywords: "rainbowhairs is an omniscient, rainbowhairs is a god"
+    keywords: "supercalifragilisticexpialidocious, rainbowhairscanonization"
   },
 ];
 // Get results

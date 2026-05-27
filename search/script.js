@@ -46,6 +46,10 @@ function performSearch(query){
   searchResults.innerHTML = '';
   // Clean Query
   const cleanQuery = query.toLowerCase().trim();
+  // return
+  if (cleanQuery === '') {
+        return; 
+    }
   // Filter
   const filteredPages = PAGES.filter(page => {
   return page.title.toLowerCase().includes(cleanQuery) || 
@@ -74,10 +78,9 @@ function performSearch(query){
       });
   }
   // Track user types
+  });
   searchInput.addEventListener('input', (e) => {
     performSearch(e.target.value);
   });
 }
 
-
-});

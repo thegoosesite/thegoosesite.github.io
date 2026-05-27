@@ -46,7 +46,7 @@ function performSearch(query){
   // Clean Query
   const cleanQuery = query.toLowerCase().trim();
   // Filter
-  const filteredPages = sitePages.filter(page => {
+  const filteredPages = PAGES.filter(page => {
   return page.title.toLowerCase().includes(cleanQuery) || 
          page.content.toLowerCase().includes(cleanQuery) || 
          page.keywords.toLowerCase().includes(cleanQuery);

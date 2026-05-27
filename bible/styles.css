@@ -2,9 +2,10 @@
   background-image:url('./scroll-src.jpg');
   font-family:'Times New Roman';
   color:#333;
-  background-color:#F0E4D1;
+  background-color:#F0E4D1; /* Not really needed, just in case bg doesn't load */
   border:none;
   border-radius:0;
+  text-align:left
 }
 .main{
   padding: 20px !important;

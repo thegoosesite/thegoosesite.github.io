@@ -83,4 +83,5 @@ function performSearch(query){
     performSearch(e.target.value);
   });
 }
+});
 

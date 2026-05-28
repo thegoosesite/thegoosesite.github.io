@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function(){
   const password = "saintrainbowhairs";
-  const input = document.getElementById("inputbox");
+  const inputbox = document.getElementById("inputbox");
   const indicator = document.getElementById("update");
-  passwordInput.addEventListener('input', function() {
+  inputbox.addEventListener('input', function() {
     const currentText = input.value;
     if (currentText === ""){
       indicator.innerText = "";

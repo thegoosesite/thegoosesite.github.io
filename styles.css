@@ -93,6 +93,12 @@ smalltext{
     color:white;
     -webkit-text-stroke:0 !important;
 }
+.izzo{
+    transition:transform 0.2s ease;
+}
+.izzo:hover{
+    transform: scale(1.1)
+}
 .format{
     max-width:45vh;
     display:block;

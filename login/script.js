@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function(){
-  const password = "saintrainbowhairs";
+  const password = "mylittlegoselings";
   const inputbox = document.getElementById("inputbox");
   const indicator = document.getElementById("update");
   inputbox.addEventListener('input', function() {

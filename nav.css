@@ -7,7 +7,7 @@
     width:100%;
     display:flex;
     flex-direction: row;
-    position: absolute;
+    position: relative;
 }
 .grandpa, .dad{
     float:left;
@@ -31,4 +31,11 @@
 }
 nav{
     margin-bottom:50px;
+}
+#logout {
+    position:absolute;
+    text-decoration:1px underline white;
+    font-weight:bold;
+    right:0;
+    top:50%;
 }

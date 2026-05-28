@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function(){
     const currentText = inputbox.value;
     if (currentText === ""){
       indicator.innerText = "";
-      indicator.className = "indicator";
+      indicator.className = "indicator static";
       return;
     } else if (currentText === password) { // It's correct!
       indicator.textContent = "✔";

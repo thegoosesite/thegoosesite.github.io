@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function(){
   const password = "saintrainbowhairs";
   const input = document.getElementById("inputbox");
   const indicator = document.getElementById("update");
-  function check(){
+  passwordInput.addEventListener('input', function() {
     const currentText = input.value;
     if (currentText === ""){
       indicator.innerText = "";
@@ -20,4 +20,5 @@ document.addEventListener("DOMContentLoaded", function(){
       statusIndicator.className = "indicator incorrect";
     }
   }
+  
 });

@@ -6,6 +6,12 @@
   padding:10px;
   background-color:gainsboro;
 }
+.input-container {
+    display: flex;
+    justify-content: center;  /* Centers them horizontally */
+    align-items: center;      /* Vertically aligns the text box and the X/Checkmark */
+    gap: 10px;                /* Puts a neat 10px space between the input and the mark */
+}
 .indicator {
   font-size: 1.2rem;
   font-weight: bold;

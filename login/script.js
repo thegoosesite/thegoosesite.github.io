@@ -19,6 +19,6 @@ document.addEventListener("DOMContentLoaded", function(){
       statusIndicator.textContent = "✘";
       statusIndicator.className = "indicator incorrect";
     }
-  }
+  });
   
 });

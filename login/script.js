@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(){
   const password = "theholysaintduck";
-  const eyeToggle = document.querySelector(".eye");
+  const eye = document.querySelector(".eye");
   const inputbox = document.getElementById("inputbox");
   const indicator = document.getElementById("update");
   inputbox.addEventListener('input', function() {

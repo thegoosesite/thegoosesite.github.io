@@ -27,3 +27,6 @@
 .static {
   color:darkgrey !important
 }
+.inputbox:hover{
+  background-color:white !important;
+}

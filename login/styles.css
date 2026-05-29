@@ -7,12 +7,15 @@
   background-color:silver !important;
   width:65% !important;
 }
+.input-stuff{
+  position:relative;
+  display:inline-block;
+}
 .input-container {
     display: flex;
     justify-content: center;  /* Centers them horizontally */
     align-items: center;      /* Vertically aligns the text box and the X/Checkmark */
     gap:10px;
-    position:relative;
 }
 .indicator, .update {
   font-size: 24px;
@@ -20,7 +23,7 @@
   -webkit-text-stroke:1px black;
 }
 .inputex{
-  position: absolute;
+    position: absolute;
   right: 5px;
   top: 50%;
   transform: translateY(-50%);

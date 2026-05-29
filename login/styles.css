@@ -1,18 +1,35 @@
-.inputbox{
-  font-family:'Comic Sans MS';
-  border:2px solid #333;
-  border-radius:10px;
-  margin:0px;
-  padding:10px;
-  background-color:silver !important;
-  width:65% !important;
+.input-stuff {
+  position: relative;
+  display: inline-block;
+  width: 66% !important;
+  margin: 0;
+  padding: 0;
 }
-.input-stuff{
-  position:relative;
-  display:inline-block;
-  width:66% !important;
-  margin:0;
-  padding:0;
+
+.inputbox {
+  font-family: 'Comic Sans MS';
+  border: 2px solid #333;
+  border-radius: 10px;
+  margin: 0px;
+  /* Added 35px padding to the right so text doesn't go under the X */
+  padding: 10px 35px 10px 10px; 
+  background-color: silver !important;
+  width: 100% !important; /* Ensure it fills the .input-stuff container */
+  box-sizing: border-box; /* Crucial so padding doesn't break the width */
+}
+
+.inputex {
+  position: absolute;
+  right: 10px;        /* Changed from left to right */
+  top: 50%;
+  transform: translateY(-50%); /* Fixed the centering math (should be negative) */
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;    /* Slightly increased size for easier clicking */
+  color: black;
+  padding: 0;         /* Clear default button padding */
+  line-height: 1;     /* Centers the times character vertically inside the button */
 }
 .input-container {
     display: flex;
@@ -24,17 +41,6 @@
   font-size: 24px;
   font-weight: bold;
   -webkit-text-stroke:1px black;
-}
-.inputex{
-    position: absolute;
-  left: 5px;
-  top: 50%;
-  transform: translateY(50%);
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  color: black;
 }
 .correct {
   color: green !important;

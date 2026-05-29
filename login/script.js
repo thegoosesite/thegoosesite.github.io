@@ -3,8 +3,14 @@ document.addEventListener("DOMContentLoaded", function(){
   const eye = document.querySelector(".eye");
   const inputbox = document.getElementById("inputbox");
   const indicator = document.getElementById("update");
-  inputbox.addEventListener('input', function() {
-    const currentText = inputbox.value;
+  inputField.addEventListener('keydown', (event) => {
+  // 1. Check if the key is a single letter (a-z or A-Z)
+    const isLetter = /^[a-zA-Z]$/.test(event.key);
+  
+    if (isLetter) {
+      console.log(`Letter detected: ${event.key}`);
+      // Process the letter (e.g., custom validation or transformation)
+      const currentText = inputbox.value;
     if (currentText === ""){
       indicator.textContent = "-";
       indicator.className = "indicator static";
@@ -29,4 +35,14 @@ document.addEventListener("DOMContentLoaded", function(){
     inputbox.setAttribute('type', type);
     
   });
+    } else {
+      // Optional: Prevent non-letter keys (excluding control keys like Backspace)
+      const isControlKey = event.key.length > 1; // e.g., 'Backspace', 'Enter'
+      if (!isControlKey) {
+        console.log('Non-letter key blocked');
+        event.preventDefault(); 
+      }
+    }
+  });
+    
 });

@@ -37,4 +37,7 @@ nav{
     text-decoration:1px underline white;
     font-weight:bold;
     right:0;
+    color:mediumspringgreen !important;
+    -webkit-text-stroke:1px white !important;
+    
 }

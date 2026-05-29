@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-  const password = "theholysaintduck";
+  const lastPageVisited = "theholysaintduck";
   const eye = document.querySelector(".eye");
   const inputbox = document.getElementById("inputbox");
   const indicator = document.getElementById("update");
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
       return;
     }
 
-    if (currentText === password) { // It's correct!
+    if (currentText === lastPageVisited) { // That wass the last page the user visited
       indicator.textContent = "✔";
       indicator.className = "indicator correct";
       setTimeout(() => {

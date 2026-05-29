@@ -24,7 +24,8 @@ document.addEventListener("DOMContentLoaded", function(){
   eye.addEventListener('click', function () {
     // Toggle the type attribute
     const type = inputbox.getAttribute('type') === 'password' ? 'text' : 'password';
-    eye.src = eye.getAttribute('src') === 'icons/on.png' ? 'icons/off.png' : 'icons/on.png';
+    eye.src = eye.getAttribute('src') === 'icons/eye-close-up.png' ? 'icons/eyebrow.png' : 'icons/eye-close-up.png';
+    eye.title = eye.getAttribute('title') === 'Hide Password' ? 'Show Password' : 'Hide Password';
     inputbox.setAttribute('type', type);
     
   });

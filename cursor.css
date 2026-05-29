@@ -1,9 +1,6 @@
 body{
-  cursor: url("https://cdn.custom-cursor.com/db/16874/32/origami-goose-cursor.png"), default !important
+  cursor: url("https://worshipthegoose.github.io/cursors/cursor.png"), default !important
 }
-button, a, #goose, .goose{
-  cursor: url("https://cdn.custom-cursor.com/db/16873/32/origami-goose-pointer.png"), pointer !important
-}
-#image {
-  cursor: url("https://cdn.custom-cursor.com/db/16873/32/origami-goose-pointer.png"), pointer !important
+button, a, #goose, .goose, #image{
+  cursor: url("https://worshipthegoose.github.io/cursors/cursor.png"), pointer !important
 }

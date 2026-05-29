@@ -6,7 +6,7 @@ body{
     /* Background colors ? */
     background-color: rgb(243, 198, 182);
     /* Text styles */
-    font-family: comic sans ms;
+    font-family: 'Comic Sans MS';
     color:white;
     /* Flexbox */
     display: flex;
@@ -94,10 +94,10 @@ smalltext{
     -webkit-text-stroke:0 !important;
 }
 .izzo{
-    transition:transform 0.2s ease;
+    transition:transform 0.5s ease;
 }
 .izzo:hover{
-    transform: scale(1.1)
+    transform: scale(1.5)
 }
 .format{
     max-width:45vh;

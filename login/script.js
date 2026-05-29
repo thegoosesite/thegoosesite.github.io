@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const eye = document.querySelector(".eye");
   const inputbox = document.getElementById("inputbox");
   const indicator = document.getElementById("update");
+  const ex = document.querySelector("#clear");
 
   inputbox.addEventListener('input', (event) => {
     const currentText = inputbox.value;
@@ -45,5 +46,9 @@ document.addEventListener("DOMContentLoaded", function() {
     // Toggle icon image and title
     eye.src = eye.getAttribute('src') === 'icons/eye-close-up.png' ? 'icons/eyebrow.png' : 'icons/eye-close-up.png';
     eye.title = eye.getAttribute('title') === 'Hide Password' ? 'Show Password' : 'Hide Password';
+  });
+  ex.addEventListener('click', function () {
+    inputbox.value = "";
+    inputbox.focus() // Remain clicked in
   });
 });

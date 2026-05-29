@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (currentText === "") {
       indicator.textContent = "-";
       indicator.className = "indicator static";
+      ex.style.display = "none";
       return;
     }
 
@@ -22,9 +23,11 @@ document.addEventListener("DOMContentLoaded", function() {
         document.cookie = "site_access=granted; max-age=" + (60 * 60 * 24 * 7) + "; path=/; SameSite=Strict";
         window.location.href = 'https://worshipthegoose.github.io/';
       }, 300);
+      ex.style.display = "none";
     } else {
       indicator.textContent = "✘";
       indicator.className = "indicator incorrect";
+      ex.style.display = "inline-block";
     }
   });
 

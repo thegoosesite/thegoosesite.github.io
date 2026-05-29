@@ -42,5 +42,5 @@ nav{
 }
 #logout a {
     color:darkgreen !important;
-    text-decoration:1px underline white;
+    text-decoration:1px underline white !important;
 }

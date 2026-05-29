@@ -2,7 +2,8 @@ footer{
     background-color:orange;
     padding:5px;
     float:bottom;
-    margin-top: auto
+    margin-top: auto;
+    border-top:2px dashed white;
 }
 .f1{
     color:white !important;

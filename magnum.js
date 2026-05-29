@@ -1,6 +1,8 @@
 // NOTE: THIS IS NOT RELATED TO CONDOMS OR ADULT CONTENT. THIS IS FOR THE PROTECTION SCRIPT AND I THOUGHT THIS WOULD BE FUNNY
 // Modified from durex.js
-const codeNormal = `    <nav>
+
+document.addEventListener("DOMContentLoaded", function(){
+  const codeNormal = `    <nav>
     <ul class='grandpa'>
         <li class='dad'>
             <a class='logo son' href='http://worshipthegoose.github.io' title='Back to the homepage.'>The Goose Site</a>
@@ -45,9 +47,6 @@ const codeNSI = `
         <h1 class='f1'>The Goose Site</h1>
     </footer>
   `;
-
-document.addEventListener("DOMContentLoaded", function(){
-
   function getCookie(name) {
     let match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
     if (match) return match[2];
@@ -56,9 +55,8 @@ document.addEventListener("DOMContentLoaded", function(){
   
   // 2. If the cookie 'site_access' isn't exactly 'granted', kick them out
   if (getCookie('site_access') === 'granted') {
-    // Add the code
-    document.body.innerHTML += codeNormal;
+    document.body.insertAdjacentHTML('beforeend', codeNormal);
   } else {
-    document.body.innerHTML += codeNSI;
+    document.body.insertAdjacentHTML('beforeend', codeNSI);
   }
 });

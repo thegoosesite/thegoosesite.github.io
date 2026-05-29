@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(){
   const password = "theholysaintduck";
-  const eyeToggle = document.getElementById("togglePassword");
+  const eyeToggle = document.querySelector("eye");
   const inputbox = document.getElementById("inputbox");
   const indicator = document.getElementById("update");
   inputbox.addEventListener('input', function() {
@@ -24,10 +24,10 @@ document.addEventListener("DOMContentLoaded", function(){
   eyeToggle.addEventListener('click', function () {
     // Toggle the type attribute
     const type = inputbox.getAttribute('type') === 'password' ? 'text' : 'password';
+    img.src = img.getAttribute('src') === 'on.png' ? 'off.png' : 'on.png';
     inputbox.setAttribute('type', type);
     
     // Toggle the icon class (example using Font Awesome)
-    this.classList.toggle('fa-eye');
-    this.classList.toggle('fa-eye-slash');
+    
   });
 });

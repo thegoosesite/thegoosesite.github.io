@@ -6,13 +6,23 @@
   flex-direction:row;
   text-align:center;
 }
+.login-div{
+  justify-content:center;
+  text-align:center;
+  align-items:center;
+  margin:0 auto;
+  padding:0;
+}
 .login-a {
   color:white !important;
-  font-size:24px;
+  font-size:20px;
 }
 .login-a:hover{
     text-decoration:1px underline white;
 }
 .login-li{
   margin:15px;
+}
+nav p{
+  color:white !important
 }

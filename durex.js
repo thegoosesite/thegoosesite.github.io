@@ -10,6 +10,6 @@ document.addEventListener("DOMContentLoaded", function(){
         // 2. If the cookie 'site_access' isn't exactly 'granted' OR not in IE, kick them out 
   if (getCookie('site_access') !== 'granted') {
     // Change 'login.html' to the exact URL of your login page if it's hosted elsewhere
-    window.location.href = 'https://worshipthegoose.github.io/login/'; 
+    window.location.href = 'https://worshipthegoose.github.io/pages/welcome/'; 
   } 
 });

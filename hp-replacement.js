@@ -107,8 +107,10 @@ document.addEventListener("DOMContentLoaded", function(){
   
         // 2. If the cookie 'site_access' isn't exactly 'granted' OR not in IE, kick them out 
   if (getCookie('site_access') !== 'granted') {
+    document.title = "Sign In - The Goose Site";
     body.innerHTML = htmlNSI; // Not signed in
   } else {
+    document.title = "The Goose Site";
     body.innerHTML = htmlNormal;
     head.insertAdjacentHTML('beforeend', `<link rel="stylesheet" href="https://worshipthegoose.github.io/cursor.css" />`);
   }

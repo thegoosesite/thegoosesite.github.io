@@ -73,9 +73,9 @@ const codeNSI = `
   
   // 2. If the cookie 'site_access' isn't exactly 'granted', kick them out
   if (getCookie('site_access') === 'granted') {
-    document.body.insertAdjacentHTML('beforeend', codeNormal);
-    document.head.inserAdjacentHTML('beforeend', `<link rel="stylesheet" href="https://worshipthegoose.github.io/cursor.css" />`);
+    document.body.innerHTML = codeNormal;
+    document.head.insertAdjacentHTML('beforeend', `<link rel="stylesheet" href="https://worshipthegoose.github.io/cursor.css" />`);
   } else {
-    document.body.insertAdjacentHTML('beforeend', codeNSI);
+    document.body.innerHTML = codeNSI;
   }
 });

@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function(){
 const codeNSI = `
       <nav style='background-color:darkorange !important; color:white !important;'>
             <h1 class="f1">The Goose Site</h1>
-      <p><s>"May the goose be with you..." - St. Duck, 32 CE</s></p>
+      <p><i>"May the goose be with you..." - St. Duck, 32 CE</i></p>
       <div class="login-div">
       <ul class="login-ul">
         <li class="login-li">

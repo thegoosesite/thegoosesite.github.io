@@ -39,7 +39,7 @@ const codeNSI = `
       <div class="login-div">
       <ul class="login-ul">
         <li class="login-li">
-          <a class="login-a" href="https://worshipthegoose.github.io/login" style="font-weight:bolder !important">Home</a>
+          <a class="login-a" href="https://worshipthegoose.github.io/pages/welcome">Home</a>
         </li>
         <li class="login-li">
           <a class="login-a" href="https://worshipthegoose.github.io/pages/terms">Legal</a>

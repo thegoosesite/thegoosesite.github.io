@@ -16,9 +16,10 @@
 .login-a {
   color:white !important;
   font-size:20px;
+  text-decoration:none;
 }
 .login-a:hover{
-    text-decoration:1px underline white;
+    text-decoration:1.2px underline white;
 }
 .login-li{
   margin:15px;

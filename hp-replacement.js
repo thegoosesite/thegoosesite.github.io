@@ -3,24 +3,6 @@ document.addEventListener("DOMContentLoaded", function(){
   // const IECheck =  !!document.documentMode (didn't work)
   const body = document.body;
   const head = document.head;
-  const headNormal = `<title>The Goose Site</title>
-        <!-- <meta> Tags: Allow for basic website function.-->
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Legacy support: Some users (that have outdated and/or slower computers may need to access this via IE)-->
-        <!-- Condom -->
-        <script src="https://worshipthegoose.github.io/durex.js"></script>
-        <script src="https://worshipthegoose.github.io/lifestyles.js"></script>
-        <!-- Linking to necessary files-->
-        <link rel="stylesheet" href="./footer.css" />
-        <link rel="stylesheet" href="./styles.css" />
-        <link rel="stylesheet" href="./nav.css" />
-        <link rel="stylesheet" href="./cursor.css" />
-        <script src="./script.js"></script> <!-- Normally, it's better to add this in the <body> tag but I wanted to make things simpler. -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> <!-- Jquery... -->  
-        <!-- Favicon -->
-        <link rel="icon" type="image/x-icon" href="./favicon.ico">
-        `;
   const htmlNormal = `
         <!-- Header... Sadly there isn't a great way to "snippet" code.-->
         <nav>
@@ -76,20 +58,6 @@ document.addEventListener("DOMContentLoaded", function(){
             <h1 class="f1">The Goose Site</h1>
         </footer>
     </body>`;
-  const headNSI = `    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="https://worshipthegoose.github.io/nav.css">
-    <link rel="stylesheet" href="https://worshipthegoose.github.io/signout-nav.css"> <!-- Only for logged out pages -->
-    <link rel="stylesheet" href="https://worshipthegoose.github.io/footer.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://worshipthegoose.github.io/login/styles.css">
-    <link rel="stylesheet" href="https://worshipthegoose.github.io/styles.css">
-    <link rel="icon" type="image/x-icon" href="https://worshipthegoose.github.io/favicon.ico">
-    <script src="https://worshipthegoose.github.io/login/script.js"></script>
-    <script src="https://worshipthegoose.github.io/login/skyn.js"></script>
-    <title>Please Login - The Goose Site</title>`;
   const htmlNSI = `
     <nav style="background-color:darkorange !important; color:white !important;">
       <h1 class="f1">The Goose Site</h1>
@@ -140,9 +108,8 @@ document.addEventListener("DOMContentLoaded", function(){
         // 2. If the cookie 'site_access' isn't exactly 'granted' OR not in IE, kick them out 
   if (getCookie('site_access') !== 'granted') {
     body.innerHTML = htmlNSI; // Not signed in
-    head.innerHTML = headNSI;
   } else {
     body.innerHTML = htmlNormal;
-    head.innerHTML = headNormal;
+    head.insertAdjacentHTML('beforeend', `<link rel="stylesheet" href="https://worshipthegoose.github.io/cursor.css" />`);
   }
 });

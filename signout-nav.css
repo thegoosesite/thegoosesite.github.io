@@ -4,11 +4,15 @@
   padding:0;
   margin:0;
   flex-direction:row;
-  gap:8px;
+  text-align:center;
 }
 .login-a {
   color:white !important;
+  font-size:24px;
 }
 .login-a:hover{
     text-decoration:1px underline white;
+}
+.login-li{
+  margin:15px;
 }

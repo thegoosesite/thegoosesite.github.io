@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function(){
             <a class='son' title='Read the Goose Bible...' href='https://worshipthegoose.github.io/bible'><u>Bible</u></a>
         </li>
     </ul>
-    </nav><br><br><br><br>
+    </nav>
     <main>
         <div class='welcome' style='text-align:center !important;'>
             <img src='https://u.cubeupload.com/coolsnake0008/57185294148a9c54d5ef.jpg' style='border-radius:15px;width:168px;height:154px;'>
@@ -34,8 +34,26 @@ document.addEventListener("DOMContentLoaded", function(){
 
 const codeNSI = `
       <nav style='background-color:darkorange !important; color:white !important;'>
-      <h1 class='f1'>The Goose Site</h1>
-    </nav><br><br><br><br>
+            <h1 class="f1">The Goose Site</h1>
+      <p>"May the goose be with you..." - St. Duck, 32 CE</p>
+      <div class="login-div">
+      <ul class="login-ul">
+        <li class="login-li">
+          <a class="login-a" href="https://worshipthegoose.github.io/login" style="font-weight:bolder !important">Login</a>
+        </li>
+        <li class="login-li">
+          <a class="login-a" href="https://worshipthegoose.github.io/pages/terms">Legal</a>
+        </li>
+        <li class="login-li">
+          <a class="login-a" href="https://worshipthegoose.github.io/pages/changelog">Release Notes</a>
+        </li>
+        <li class="login-li">
+          <a class="login-a" href="mailto:worshiptheholygoose@gmail.com">Contact Us</a>
+        </li>
+      </ul>
+        
+      </div>
+    </nav>
     <main>
         <div class='welcome' style='text-align:center !important;'>
             <img src='https://u.cubeupload.com/coolsnake0008/57185294148a9c54d5ef.jpg' style='border-radius:15px;width:168px;height:154px;'>

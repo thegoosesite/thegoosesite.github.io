@@ -39,7 +39,7 @@ const codeNSI = `
       <div class="login-div">
       <ul class="login-ul">
         <li class="login-li">
-          <a class="login-a" href="https://worshipthegoose.github.io/login" style="font-weight:bolder !important">Login</a>
+          <a class="login-a" href="https://worshipthegoose.github.io/login" style="font-weight:bolder !important">Home</a>
         </li>
         <li class="login-li">
           <a class="login-a" href="https://worshipthegoose.github.io/pages/terms">Legal</a>
@@ -57,8 +57,8 @@ const codeNSI = `
     <main>
         <div class='welcome' style='text-align:center !important;'>
             <img src='https://u.cubeupload.com/coolsnake0008/57185294148a9c54d5ef.jpg' style='border-radius:15px;width:168px;height:154px;'>
-            <h1 style='-webkit-text-stroke:1px black;color:green'>Whoops! Server returned 404 and 401 errors.</h1>
-            <p>This page does not exist + you need to sign in. Redirecting you to the login page...</p>
+            <h1 style='-webkit-text-stroke:1px black;color:green'>Whoops! 404.</h1>
+            <p>This page does not exist. Redirecting you to the home page...</p>
         </div>
     </main>
     <footer>

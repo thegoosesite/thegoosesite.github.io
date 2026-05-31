@@ -19,5 +19,5 @@ body::-moz-selection{
     color:black !important;
 }
 body {
-    background-image: url('https://worshipthegoose.github.io/assets/images/background.png');
+    background-image: url('https://worshipthegoose.github.io/assets/images/background.png') !important;
 }

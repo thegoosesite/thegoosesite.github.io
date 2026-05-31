@@ -6,7 +6,7 @@
     margin:20px;
     padding:10px;
     display:flex;
-    justify-content: left;
+    justify-content: center;
     border:3px groove black;
     font-family: 'Courier New' !important;
 }

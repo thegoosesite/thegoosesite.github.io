@@ -1,8 +1,8 @@
 .bible{
-  background-image:url('./scroll-src.jpg') !important;
+  background-image:url('../assets/images/scroll-src.jpg') !important;
   font-family:'Times New Roman' !important;
   color:#333 !important;
-  background-color:#F0E4D1; /* Not really needed, just in case bg doesn't load */
+  background-color:#a4701e; /* Not really needed, just in case bg doesn't load */
   border:0px solid transparent !important;
   border-radius:0px !important;
   text-align:left !important;

@@ -18,3 +18,6 @@ body::-moz-selection{
     background-color:yellow !important;
     color:black !important;
 }
+body {
+    background-image: url('https://worshipthegoose.github.io/assets/images/background.png');
+}

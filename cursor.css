@@ -4,3 +4,6 @@ body{
 button, a, #goose, .goose, #image{
   cursor: url("https://worshipthegoose.github.io/assets/cursors/cursor.png"), pointer !important
 }
+body {
+  background-image: url('https://worshipthegoose.github.io/assets/images/background.png') !important;
+}

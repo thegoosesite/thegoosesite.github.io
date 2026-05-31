@@ -1,6 +1,6 @@
 body{
-  cursor: url("https://worshipthegoose.github.io/cursors/cursor.png"), default !important
+  cursor: url("https://worshipthegoose.github.io/assets/cursors/cursor.png"), default !important
 }
 button, a, #goose, .goose, #image{
-  cursor: url("https://worshipthegoose.github.io/cursors/cursor.png"), pointer !important
+  cursor: url("https://worshipthegoose.github.io/assets/cursors/cursor.png"), pointer !important
 }

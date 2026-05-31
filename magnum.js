@@ -2,6 +2,7 @@
 // Modified from durex.js
 
 document.addEventListener("DOMContentLoaded", function(){
+  const head = document.head;
   const codeNormal = `    <nav>
     <ul class='grandpa'>
         <li class='dad'>
@@ -17,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function(){
             <a class='son' title='The unity videos...' href='https://worshipthegoose.github.io/videos'>Videos</a>
         </li>
         <li class='dad'>
-            <a class='son' title='Read the Goose Bible...' href='https://worshipthegoose.github.io/bible'><u>Bible</u></a>
+            <a class='son' title='Read the Goose Bible...' href='https://worshipthegoose.github.io/bible'>Bible</a>
         </li>
     </ul>
     </nav>
@@ -42,7 +43,7 @@ const codeNSI = `
           <a class="login-a" href="https://worshipthegoose.github.io/pages/welcome">Home</a>
         </li>
         <li class="login-li">
-          <a class="login-a" href="https://worshipthegoose.github.io/pages/terms">Legal</a>
+          <a class="login-a" href="https://worshipthegoose.github.io/pages/notice">Notice</a>
         </li>
         <li class="login-li">
           <a class="login-a" href="https://worshipthegoose.github.io/pages/changelog">Release Notes</a>
@@ -74,8 +75,10 @@ const codeNSI = `
   // 2. If the cookie 'site_access' isn't exactly 'granted', kick them out
   if (getCookie('site_access') === 'granted') {
     document.body.innerHTML = codeNormal;
-    document.head.insertAdjacentHTML('beforeend', `<link rel="stylesheet" href="https://worshipthegoose.github.io/cursor.css" />`);
+    head.insertAdjacentHTML('beforeend', `<link rel="stylesheet" href="https://worshipthegoose.github.io/cursor.css" />`);
+    
   } else {
     document.body.innerHTML = codeNSI;
+    head.insertAdjacentHTML('beforeend', `<link rel="icon" type="image/x-icon" href="https://worshipthegoose.github.io/favicon.ico">`);
   }
 });

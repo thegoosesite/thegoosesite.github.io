@@ -1,18 +1,23 @@
+
 .grandpa {
     list-style-type: none;
     margin: 0; 
     padding: 0;
-    /* REMOVED: overflow: hidden; (This was killing your menu) */
     background-color: darkorange;
     width: 100%;
     display: flex;
     flex-direction: row;
     position: relative;
-    min-height: 54px; /* Ensures the orange background keeps its height */
+    min-height: 54px; /* Keeps the orange bar filled without using overflow:hidden */
 }
 
-/* FIX THE COLOR OVERRIDE: Stop forcing .dad and .grandpa to display inline-block 
-   as text elements, which breaks layout alignment for nested elements. */
+nav {
+    margin-bottom: 50px;
+}
+.dad {
+    display: block;
+}
+
 .son {
     color: white;
     text-align: center;
@@ -22,35 +27,38 @@
     padding: 13px;
 }
 
-/* Remove .grandpa, .dad, and .son combined formatting rules to separate concerns */
-.dad {
-    display: block;
+.son:hover {
+    background-color: orangered;
 }
 
-/* Ensure sub-links look normal and don't inherit global text formatting traits */
-.dropdown-content li a {
-    color: white !important;
-    font-size: 18px; /* Slightly smaller text for submenus looks cleaner */
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    -webkit-text-stroke: 0px transparent !important; /* Prevents global stroke leaks */
-}
-
-.grandpa, .dad{
-    float:left;
+.logo {
+    font-weight: bolder;
+    text-decoration: 1px wavy underline;
 }
 .grandpa .dad.dropdown {
     position: relative;
-    display: inline-block; /* Keeps links side-by-side if they aren't already */
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    background-color: #333; 
+    min-width: 220px; /* Slightly widened to fit your longer video link titles text */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1000; 
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
 }
 .dropdown-content li a {
-    color: white;
+    color: white !important;
+    font-size: 18px; 
     padding: 12px 16px;
     text-decoration: none;
     display: block;
     text-align: center;
+    -webkit-text-stroke: 0px transparent !important; 
 }
 .dropdown-content li a:hover {
     background-color: orangered; 
@@ -58,27 +66,15 @@
 .grandpa .dad.dropdown:hover .dropdown-content {
     display: block;
 }
-
-
-.son:hover{
-    background-color:orangered;
-}
-.logo{
-    font-weight: bolder;
-    text-decoration: 1px wavy underline;
-}
-nav{
-    margin-bottom:50px;
-}
 #logout {
-    position:absolute;
-    text-decoration:1px underline white;
-    font-weight:bold;
-    right:0;
-    -webkit-text-stroke:1px white !important;
-    
+    position: absolute;
+    text-decoration: 1px underline white;
+    font-weight: bold;
+    right: 0;
+    -webkit-text-stroke: 1px white !important;
 }
+
 #logout a {
-    color:darkgreen !important;
-    text-decoration:1px underline white !important;
+    color: darkgreen !important;
+    text-decoration: 1px underline white !important;
 }

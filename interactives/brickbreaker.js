@@ -10,6 +10,10 @@ document.addEventListener('DOMContentLoaded', function(){
     const background = new Image();
     background.src = imageLink;
 
+    // Ball image setup
+    const ballImage = new Image();
+    ballImage.src = 'https://worshipthegoose.github.io/assets/images/BBball.png';
+
     // Getting elements
     const scoreText = document.querySelector(".BBgooscore");
     const livesText = document.querySelector(".BBlives");
@@ -115,13 +119,14 @@ document.addEventListener('DOMContentLoaded', function(){
         gameInterval = setInterval(updateGame, 30);
     }
 
-    // Draw ball
+    // Draw ball as an image
     function drawBall() {
-        ctx.beginPath();
-        ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
-        ctx.fillStyle = "red";
-        ctx.fill();
-        ctx.closePath();
+        // Center the image layout exactly over the ball's X and Y physics point
+        const imgX = ball.x - ball.radius;
+        const imgY = ball.y - ball.radius;
+        const size = ball.radius * 2;
+
+        ctx.drawImage(ballImage, imgX, imgY, size, size);
     }
 
     // draw paddle
@@ -130,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function(){
         ctx.rect(paddle.x, paddle.y, paddle.width, paddle.height);
         ctx.fillStyle = "blue";
         ctx.fill();
-        ctx.closePath(); // Fixed: Added parenthesis
+        ctx.closePath(); 
     }
 
     function theGooseIsAwesome(){
@@ -201,6 +206,7 @@ document.addEventListener('DOMContentLoaded', function(){
         }
     }
 
+    // handle key releases
     function keyUpHandler(e) {
         if (e.keyCode == 39) {
             rightPressed = false;

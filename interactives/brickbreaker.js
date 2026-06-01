@@ -21,10 +21,11 @@ document.addEventListener('DOMContentLoaded', function(){
     ctx.fillStyle = "white";
 
     // 2. Calculate the exact center coordinates of the canvas
-    const centerX = canvas.width / 2;
-    const centerY = canvas.height / 2;
+    const centerX = 240;
+    const centerY = 320;
 
-    // 3. Render later
+    // 3. Render the text exactly at the calculated center
+    ctx.fillText("Press start.", centerX, centerY);
     // Clicks
     restartButton.onclick = initialize;
 
@@ -61,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function(){
     document.addEventListener("keydown", keyDownHandler, false);
     document.addEventListener("keyup", keyUpHandler, false);
 
-    // Draw background loop cleanly on load without starting game mechanics + blit text
+    // Draw background loop cleanly on load without starting game mechanics
     background.onload = function() {
         ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
         ctx.fillText("Press start.", centerX, centerY);

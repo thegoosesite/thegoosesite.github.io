@@ -14,8 +14,12 @@ document.addEventListener("DOMContentLoaded", function(){
         <li class='dad'>
             <a class='son' title='The trinity slideshows...' href='https://worshipthegoose.github.io/powerpoint'>Slideshows</a>
         </li>
-        <li class='dad'>
-            <a class='son' title='The unity videos...' href='https://worshipthegoose.github.io/videos'>Videos</a>
+        <li style="cursor:pointer;" class="dad dropdown">
+            <a class="son" title="The unity videos...">Videos</a>
+            <ul class="dropdown-content">
+                <li><a title="Subscribe or die..." href="https://worshipthegoose.github.io/youtube">Youtube Channel</a></li>
+                <li><a title="Worship, pray, and repent..." href="https://worshipthegoose.github.io/videos">Unity Video Collection</a></li>
+            </ul>
         </li>
         <li class='dad'>
             <a class='son' title='Read the Goose Bible...' href='https://worshipthegoose.github.io/bible'>Bible</a>

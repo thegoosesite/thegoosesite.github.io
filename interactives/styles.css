@@ -26,6 +26,9 @@
 .BBcanvas{
     background-color:black;
 }
+.BBdesc{
+    font-size:12px;
+}
 .BBcontent{
     display: flex;
     margin:0 auto;

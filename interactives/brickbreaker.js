@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', function(){
     const canvas = document.querySelector(".BBcanvas");
     const ctx = canvas.getContext("2d");
     // DO NOT DECLARE IN CSS OTW YOULL END UP WITH SAAMS FATE
-    canvas.width = 432;
-    canvas.height = 288;
+    canvas.width = 480;
+    canvas.height = 320;
 
     // images
     const imageLink = `https://worshipthegoose.github.io/assets/images/BBbackground.png`;
@@ -15,7 +15,18 @@ document.addEventListener('DOMContentLoaded', function(){
     const livesText = document.querySelector(".BBlives");
     const restartButton = document.querySelector(".BBrestart");
     const statis = document.querySelector(".BBstatus");
+    // More shit
+    // 1. Set the appearance
+    ctx.font = "30px Serif";
+    ctx.fillStyle = "white";
 
+    // 2. Calculate the exact center coordinates of the canvas
+    const centerX = canvas.width / 2;
+    const centerY = canvas.height / 2;
+
+    // 3. Render the text exactly at the calculated center
+    ctx.fillText("Press start.", centerX, centerY);
+    // Clicks
     restartButton.onclick = initialize;
 
     // Setting up global variables

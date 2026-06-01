@@ -1,33 +1,49 @@
-.grandpa{
+.grandpa {
     list-style-type: none;
-    margin:0; 
-    padding:0;
-    overflow:hidden;
-    background-color:darkorange;
-    width:100%;
-    display:flex;
+    margin: 0; 
+    padding: 0;
+    /* REMOVED: overflow: hidden; (This was killing your menu) */
+    background-color: darkorange;
+    width: 100%;
+    display: flex;
     flex-direction: row;
     position: relative;
+    min-height: 54px; /* Ensures the orange background keeps its height */
 }
+
+/* FIX THE COLOR OVERRIDE: Stop forcing .dad and .grandpa to display inline-block 
+   as text elements, which breaks layout alignment for nested elements. */
+.son {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 23px;
+    display: inline-block;
+    padding: 13px;
+}
+
+/* Remove .grandpa, .dad, and .son combined formatting rules to separate concerns */
+.dad {
+    display: block;
+}
+
+/* Ensure sub-links look normal and don't inherit global text formatting traits */
+.dropdown-content li a {
+    color: white !important;
+    font-size: 18px; /* Slightly smaller text for submenus looks cleaner */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    -webkit-text-stroke: 0px transparent !important; /* Prevents global stroke leaks */
+}
+
 .grandpa, .dad{
     float:left;
 }
 .grandpa .dad.dropdown {
     position: relative;
     display: inline-block; /* Keeps links side-by-side if they aren't already */
-}
-.dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%; /* Places it perfectly below the main nav bar */
-    left: 0;
-    background-color: #333; /* Matches standard dark themes, change to match your site */
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1000; /* Keeps it on top of your main page content layers */
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
 }
 .dropdown-content li a {
     color: white;
@@ -43,16 +59,7 @@
     display: block;
 }
 
-.grandpa, .dad, .son{
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    font-size: 23px;
-    display: inline-block;
-}
-.son{
-    padding: 13px;
-}
+
 .son:hover{
     background-color:orangered;
 }

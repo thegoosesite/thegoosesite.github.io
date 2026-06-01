@@ -10,6 +10,7 @@
     -webkit-text-stroke:2px darkorange;
 }
 .blue{
+    color:black !important;
     padding:7px;
     background-color:#CBC3E3;
     margin:5px;
@@ -17,7 +18,7 @@
 }
 .BBselector{
     border-radius:12px;
-    color:black;
+    color:black !important;
     -webkit-text-stroke:0.075rem white;
     background-color: rgb(120, 3, 3);
     background-image:url('https://worshipthegoose.github.io/assets/images/BBselbac.png') !important;

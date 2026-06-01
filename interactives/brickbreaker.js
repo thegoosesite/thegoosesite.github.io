@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function(){
     const statis = document.querySelector(".BBstatus");
     // More shit
     // 1. Set the appearance
-    ctx.font = "30px Courier New";
+    ctx.font = "bold 30px Courier New";
     ctx.fillStyle = "white";
 
     // 2. Calculate the exact center coordinates of the canvas
@@ -27,21 +27,7 @@ document.addEventListener('DOMContentLoaded', function(){
     // 3. Render the text exactly at the calculated center
     ctx.fillText("Press start.", centerX, centerY);
     // Clicks
-    restartButton.onclick = initialize;
-    // 4. BG metrics
-    const textMetrics = ctx.measureText("Press start.");
-    const textWidth = textMetrics.width;
-    const textHeight = 30; // Matches your font size
-    const padding = 15;    // Extra space around the text
-
-    // 5. Calculate background rectangle dimensions
-    const rectWidth = textWidth + (padding * 2);
-    const rectHeight = textHeight + (padding * 2);
-    const rectX = centerX - (rectWidth / 2);
-    const rectY = centerY - (rectHeight / 2);
-
-    // 6. Fillstyle the background box first
-    ctx.fillStyle = "rgba(255, 140, 0, 0.6)"; // Semi-transparent dark orange
+    restartButton.onclick = initialize
 
     // Setting up global variables
     let ball = {
@@ -80,7 +66,6 @@ document.addEventListener('DOMContentLoaded', function(){
     background.onload = function() {
         ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
         ctx.fillText("Press start.", centerX, centerY);
-        ctx.fillRect(rectX, rectY, rectWidth, rectHeight);
     };
 
     // Function to setup starting parameters

@@ -17,11 +17,11 @@ document.addEventListener('DOMContentLoaded', function(){
     const statis = document.querySelector(".BBstatus");
     // More shit
     // 1. Set the appearance
-    ctx.font = "30px Serif";
+    ctx.font = "30px Courier New";
     ctx.fillStyle = "white";
 
     // 2. Calculate the exact center coordinates of the canvas
-    const centerX = 200;
+    const centerX = 185;
     const centerY = 150;
 
     // 3. Render the text exactly at the calculated center

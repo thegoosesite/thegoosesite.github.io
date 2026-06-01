@@ -72,6 +72,9 @@ document.addEventListener('DOMContentLoaded', function(){
         // Clear any existing intervals so loops don't stack on restart
         clearInterval(gameInterval);
 
+        ///
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
         // Reset status text
         statis.innerText = "Playing...";
 

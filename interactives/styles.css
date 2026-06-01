@@ -16,10 +16,13 @@
     margin:5px;
     border-radius:10px;
 }
+.BBbreakout{
+    -webkit-text-stroke:0.075rem white !important;
+}
 .BBselector{
     border-radius:12px;
+    -webkit-text-stroke:0.075rem black;
     color:black !important;
-    -webkit-text-stroke:0.075rem white;
     background-color: rgb(120, 3, 3);
     background-image:url('https://worshipthegoose.github.io/assets/images/BBselbac.png') !important;
     margin:20px;

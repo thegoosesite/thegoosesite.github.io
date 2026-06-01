@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", function(){
         <li class='dad'>
             <a class='logo son' href='http://worshipthegoose.github.io' title='Back to the homepage.'>The Goose Site</a>
         </li>
-        <li class='dad'>
-            <a class='son' title='Sub to @worshiptheholygoose on YT!' href='https://worshipthegoose.github.io/youtube'>Youtube Channel</a>
+        <li class="dad">
+            <a class="son" title="Play Goose Games..." href="https://worshipthegoose.github.io/interactives">Interactives</a>
         </li>
         <li class='dad'>
             <a class='son' title='The trinity slideshows...' href='https://worshipthegoose.github.io/powerpoint'>Slideshows</a>
@@ -17,15 +17,12 @@ document.addEventListener("DOMContentLoaded", function(){
         <li style="cursor:pointer;" class="dad dropdown">
             <a class="son" title="The unity videos...">Videos</a>
             <ul class="dropdown-content">
-                <li><a title="Subscribe or die..." href="https://worshipthegoose.github.io/youtube">Youtube Channel</a></li>
+                <li class="space"><a title="Subscribe or die..." href="https://worshipthegoose.github.io/youtube">Youtube Channel</a></li>
                 <li><a title="Worship, pray, and repent..." href="https://worshipthegoose.github.io/videos">Unity Video Collection</a></li>
             </ul>
         </li>
         <li class='dad'>
             <a class='son' title='Read the Goose Bible...' href='https://worshipthegoose.github.io/bible'>Bible</a>
-        </li>
-        <li class="dad">
-            <a class="son" title="Goose Games" href="https://worshipthegoose.github.io/interactives">Interactives</a>
         </li>
     </ul>
     </nav>

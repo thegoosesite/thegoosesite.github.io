@@ -77,3 +77,6 @@ nav {
     color: darkgreen !important;
     text-decoration: 1px underline white !important;
 }
+.dropdown-content .space{
+    border-top:1px dashed white;
+}

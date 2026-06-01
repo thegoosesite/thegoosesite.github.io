@@ -73,11 +73,12 @@ document.addEventListener('DOMContentLoaded', function(){
         // Clear any existing intervals so loops don't stack on restart
         clearInterval(gameInterval);
 
-        ///
+        /// Clear screen
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        // Reset status text
+        // Reset status text + re
         statis.innerText = "Playing...";
+        restartButton.textContent = "Restart";
 
         // Set up lives and score
         lives = 3;

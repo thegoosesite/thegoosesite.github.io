@@ -11,7 +11,9 @@
 }
 .blue{
     padding:7px;
-    background-color:lightgreen;
+    background-color:rgb(120, 3, 3);
+    margin:5px;
+    border-radius:10px;
 }
 .BBselector{
     border-radius:12px;

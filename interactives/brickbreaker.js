@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function(){
     const livesText = document.querySelector(".BBlives");
     const restartButton = document.querySelector(".BBrestart");
     const statis = document.querySelector(".BBstatus");
-    // More shit
+    // More stuff...
     // 1. Set the appearance
     ctx.font = "bold 30px Courier New";
     ctx.fillStyle = "white";

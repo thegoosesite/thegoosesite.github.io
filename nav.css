@@ -65,6 +65,9 @@ nav {
 .grandpa .dad.dropdown:hover .dropdown-content {
     display: block;
 }
+.grandpa .dad.dropdown:active .dropdown-content {
+    display: block;
+}
 #logout {
     position: absolute;
     text-decoration: 1px underline white;
@@ -74,8 +77,7 @@ nav {
 }
 
 #logout a {
-    color: darkgreen !important;
-    text-decoration: 1px underline white !important;
+    text-decoration: 1.2px underline white !important;
 }
 .dropdown-content .space{
     border-top:1px dashed white;

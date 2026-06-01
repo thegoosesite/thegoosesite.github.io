@@ -80,3 +80,7 @@ nav {
 .dropdown-content .space{
     border-top:1px dashed white;
 }
+#logout img{
+    width:24;
+    height: 24;
+}

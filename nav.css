@@ -71,7 +71,7 @@ nav {
 #logout {
     position: absolute;
     text-decoration: 1px underline white;
-    font-weight: bold;
+    font-weight: 500; /* Semibold */
     right: 0;
     -webkit-text-stroke: 1px white !important;
 }

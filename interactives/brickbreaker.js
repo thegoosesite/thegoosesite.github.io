@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function(){
     ctx.fillStyle = "white";
 
     // 2. Calculate the exact center coordinates of the canvas
-    const centerX = 150;
+    const centerX = 142;
     const centerY = 155;
 
     // 3. Render the text exactly at the calculated center

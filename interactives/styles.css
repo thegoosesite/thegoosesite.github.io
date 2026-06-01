@@ -38,6 +38,7 @@
     font-size:12px;
 }
 .BBcontent{
+    -webkit-text-stroke:0.075rem black !important;
     color:black !important;
     display: flex;
     margin:0 auto;

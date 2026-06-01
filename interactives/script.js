@@ -16,12 +16,14 @@ document.addEventListener('DOMContentLoaded', () => {
     BBbutton.addEventListener('click', function(){
         if (BBplayed === false){
             BBcontent.insertAdjacentHTML('beforeend', BBcode);
-            head.insertAdjacentHTML('beforeend', `<script class = "BBjs" src="./brickbreaker.js"></script>`)
+            head.insertAdjacentHTML('beforeend', `<script class = "BBjs" src="https://worshipthegoose.github.io/brickbreaker.js"></script>`)
             BBbutton.textContent = "Collapse";
+            BBplayed = true; 
         }else{
             BBcontent.innerHTML = "";
             if (document.querySelector(".BBjs")){this.remove()};
             BBbutton.textContent = "Play";
+            BBplayed = false;
         }
     })
 });

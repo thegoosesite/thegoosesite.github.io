@@ -20,6 +20,9 @@ document.addEventListener("DOMContentLoaded", function(){
         <li class='dad'>
             <a class='son' title='Read the Goose Bible...' href='https://worshipthegoose.github.io/bible'>Bible</a>
         </li>
+        <li class="dad">
+            <a class="son" title="Goose Games" href="https://worshipthegoose.github.io/interactives">Interactives</a>
+        </li>
     </ul>
     </nav>
     <main>

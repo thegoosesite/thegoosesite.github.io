@@ -25,13 +25,16 @@
             <a  class="son" title="Sub to @worshiptheholygoose on YT!" href="https://worshipthegoose.github.io/youtube">Youtube Channel</a>
         </li>
         <li class="dad">
-            <a class="son" title="The trinity slideshows..." href="https://worshipthegoose.github.io/powerpoint"><u>Slideshows</u></a>
+            <a class="son" title="The trinity slideshows..." href="https://worshipthegoose.github.io/powerpoint">Slideshows</a>
         </li>
         <li class="dad">
             <a class="son" title="The unity videos..." href="https://worshipthegoose.github.io/videos">Videos</a>
         </li>
         <li class="dad">
             <a class="son" title="Read the Goose Bible..." href="https://worshipthegoose.github.io/bible">Bible</a>
+        </li>
+        <li class="dad">
+            <a class="son" title="Goose Games" href="https://worshipthegoose.github.io/interactives"><u>Interactives</u></a>
         </li>
         <li class="dad" id="logout"><a class="son" title="Voids Session Data" onclick="document.cookie = 'site_access=granted; expires=Thu, 18 Dec 2026 12:00:00 UTC; path=/;';"><img src="https://worshipthegoose.github.io/assets/images/signin.png" /><u>Logout</u></a></li>
     </ul>
@@ -48,9 +51,8 @@
                 <h3><span class="BBgoose">Goose</span> <u>BREAKOUT</u></h3>
                 <p>Brick Breaker but with GOOSE.</p>
                 <div class="BBcontent">
-                    <!-- Content will be added in JS-->
+                    <canvas class="BBcanvas"></canvas><table class="BBtable"><tr><td><div>Score:</div><div class="BBgooscore">0</div></td><td><div>Lives:</div><div class="BBlives">0</div></td><td><button class="BBrestart">Start</button></td></tr></table><p class="BBstatus"></p>
                 </div>
-                <button class="BBplay">Play</button>
             </div>
 
         </div>

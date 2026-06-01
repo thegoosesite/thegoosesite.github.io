@@ -9,6 +9,10 @@
     color:black !important;
     -webkit-text-stroke:2px darkorange;
 }
+.blue{
+    padding:7px;
+    background-color:lightgreen;
+}
 .BBselector{
     border-radius:12px;
     color:black;

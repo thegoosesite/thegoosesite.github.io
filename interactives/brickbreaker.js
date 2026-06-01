@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', function(){
     ctx.fillStyle = "white";
 
     // 2. Calculate the exact center coordinates of the canvas
-    const centerX = 240;
-    const centerY = 320;
+    const centerX = 200;
+    const centerY = 150;
 
     // 3. Render the text exactly at the calculated center
     ctx.fillText("Press start.", centerX, centerY);

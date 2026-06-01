@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function(){
     // Clicks
     restartButton.onclick = initialize;
     // 4. BG metrics
-    const textMetrics = ctx.measureText(text);
+    const textMetrics = ctx.measureText("Press start.");
     const textWidth = textMetrics.width;
     const textHeight = 30; // Matches your font size
     const padding = 15;    // Extra space around the text

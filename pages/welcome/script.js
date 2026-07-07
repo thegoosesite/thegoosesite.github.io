@@ -42,17 +42,19 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   eye.addEventListener('click', function () {
-  // 1. Toggle the type attribute based on current state
+  // 1. Check if the input is currently a password field
   const isPassword = inputbox.type === 'password';
+  
+  // 2. Toggle the type attribute
   inputbox.type = isPassword ? 'text' : 'password';
   
-  // 2. Update icon and title based on the new state
+  // 3. Sync the image src and title cleanly based on the state
   if (isPassword) {
-    eye.src = './icons/eyebrow.png';
-    eye.title = 'Show Password';
-  } else {
-    eye.src = './icons/eye-close-up.png';
+    eye.src = 'icons/eye-close-up.png';
     eye.title = 'Hide Password';
+  } else {
+    eye.src = 'icons/eyebrow.png';
+    eye.title = 'Show Password';
   }
 });
 });

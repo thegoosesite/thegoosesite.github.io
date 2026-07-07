@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
       return;
     }
 
-    if (tokenReader(currentText) === lastPageVisited) { // That wass the last page the user visited
+    if (tokenReader(currentText) === token) { // That wass the last page the user visited
       indicator.textContent = "✔";
       indicator.className = "indicator correct";
       setTimeout(() => {

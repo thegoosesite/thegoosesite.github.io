@@ -1,10 +1,10 @@
+import { tokenReader } from "./token-catcher";
 document.addEventListener("DOMContentLoaded", function() {
-  const lastPageVisited = "theholysaintduck";
+  const token = "lwfsixtstkxfnsyxbfs";
   const eye = document.querySelector(".eye");
   const inputbox = document.getElementById("inputbox");
   const indicator = document.getElementById("update");
   const ex = document.querySelector("#clear");
-
   inputbox.addEventListener('input', (event) => {
     const currentText = inputbox.value;
 
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
       return;
     }
 
-    if (currentText === lastPageVisited) { // That wass the last page the user visited
+    if (tokenReader(currentText) === lastPageVisited) { // That wass the last page the user visited
       indicator.textContent = "✔";
       indicator.className = "indicator correct";
       setTimeout(() => {

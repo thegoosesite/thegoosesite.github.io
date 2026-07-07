@@ -42,16 +42,17 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   eye.addEventListener('click', function () {
-    // Toggle the type attribute
-    const type = inputbox.getAttribute('type') === 'password' ? 'text' : 'password';
-    inputbox.setAttribute('type', type);
-    
-    // Toggle icon image and title
-    eye.src = eye.getAttribute('src') === 'icons/eye-close-up.png' ? 'icons/eyebrow.png' : 'icons/eye-close-up.png';
-    eye.title = eye.getAttribute('title') === 'Hide Password' ? 'Show Password' : 'Hide Password';
-  });
-  ex.addEventListener('click', function () {
-    inputbox.value = "";
-    inputbox.focus() // Remain clicked in
-  });
+  // 1. Toggle the type attribute based on current state
+  const isPassword = inputbox.type === 'password';
+  inputbox.type = isPassword ? 'text' : 'password';
+  
+  // 2. Update icon and title based on the new state
+  if (isPassword) {
+    eye.src = './icons/eyebrow.png';
+    eye.title = 'Show Password';
+  } else {
+    eye.src = './icons/eye-close-up.png';
+    eye.title = 'Hide Password';
+  }
+});
 });

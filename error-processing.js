@@ -1,5 +1,3 @@
-// NOTE: THIS IS NOT RELATED TO CONDOMS OR ADULT CONTENT. THIS IS FOR THE PROTECTION SCRIPT AND I THOUGHT THIS WOULD BE FUNNY
-// Modified from durex.js
 
 document.addEventListener("DOMContentLoaded", function(){
   const head = document.head;

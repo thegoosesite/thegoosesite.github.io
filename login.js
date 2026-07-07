@@ -1,4 +1,3 @@
-// NOTE: THIS IS NOT RELATED TO CONDOMS OR ADULT CONTENT. THIS IS FOR THE PROTECTION SCRIPT AND I THOUGHT THIS WOULD BE FUNNY
 document.addEventListener("DOMContentLoaded", function(){
   // const IECheck =  !!document.documentMode (didn't work)
   function getCookie(name) {
@@ -9,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function(){
   
         // 2. If the cookie 'site_access' isn't exactly 'granted' OR not in IE, kick them out 
   if (getCookie('site_access') !== 'granted') {
-    // Change 'login.html' to the exact URL of your login page if it's hosted elsewhere
+    // 3. Redirect user to '/pages/welcome' to sign in with either a one-time code or the master password.
     window.location.href = 'https://worshipthegoose.github.io/pages/welcome/'; 
   } 
 });

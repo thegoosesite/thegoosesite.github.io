@@ -1,4 +1,4 @@
-import { tokenReader } from "./token-catcher";
+import { tokenReader } from "https://raw.githubusercontent.com/worshipthegoose/worshipthegoose.github.io/refs/heads/main/pages/welcome/token-catcher.js";
 document.addEventListener("DOMContentLoaded", function() {
   const token = "lwfsixtstkxfnsyxbfs";
   const eye = document.querySelector(".eye");

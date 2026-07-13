@@ -1,6 +1,3 @@
-// 1. Caesar Cipher Engine (Repaired and Fixed) 
-// Fun fact! I imported this from one of my old CODEPEN projects from two years ago. I did have to do a little moderization
-// (e.g. replacing "var" with "let" and "const") but overall it looks good!
 const key = 5;
 const range = 26;
 const aCode = 65;
@@ -8,21 +5,21 @@ const zCode = aCode + range;
 
 function tokenReader(acceptedToken) {
     let NewAcceptedToken = acceptedToken.toUpperCase();
-    let resultString = ""; // Store the final output string
+    let resultString = ""; 
 
-    for (let i = 0; i < NewAcceptedToken.length; i++) { // FIXED: Use NewAcceptedToken
+    for (let i = 0; i < NewAcceptedToken.length; i++) { 
         let letter = NewAcceptedToken.charCodeAt(i);
         let newLetter = letter;
         
-        if (letter >= aCode && letter < zCode) { // FIXED: Range bounds
+        if (letter >= aCode && letter < zCode) { 
             newLetter += key;
             if (newLetter >= zCode) {
                 newLetter -= range;
             }
         }
-        resultString += String.fromCharCode(newLetter); // FIXED: Build the string
+        resultString += String.fromCharCode(newLetter); 
     }
-    return resultString.toLowerCase(); // FIXED: Return lowercase to match your token variable
+    return resultString.toLowerCase(); 
 }
 
 // 2. Auth Guard Loop Prevention
@@ -33,7 +30,6 @@ document.addEventListener("DOMContentLoaded", function() {
     return null;
   }
   
-  // If already logged in, redirect to home
   if (getCookie('site_access') === 'granted' && window.location.pathname !== '/') {
     window.location.href = 'https://worshipthegoose.github.io'; 
   }
@@ -47,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const indicator = document.getElementById("update");
   const ex = document.querySelector("#clear");
 
-  if (!inputbox || !eye) return; // Prevent console errors if elements are missing
+  if (!inputbox || !eye || !ex) return; 
 
   inputbox.addEventListener('input', () => {
     const currentText = inputbox.value;
@@ -59,7 +55,6 @@ document.addEventListener("DOMContentLoaded", function() {
       return;
     }
 
-    // Process the input using the corrected cipher function
     if (tokenReader(currentText) === token) { 
       indicator.textContent = "✔";
       indicator.className = "indicator correct";
@@ -75,7 +70,15 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 
-  // Block non-letters (except controls)
+  // FIXED: Added functional click logic to wipe the input box when 'X' is clicked
+  ex.addEventListener('click', () => {
+    inputbox.value = "";
+    indicator.textContent = "-";
+    indicator.className = "indicator static";
+    ex.style.display = "none";
+    inputbox.focus();
+  });
+
   inputbox.addEventListener('keydown', (event) => {
     const isLetter = /^[a-zA-Z]$/.test(event.key);
     const isControlKey = event.key.length > 1; 
@@ -85,16 +88,16 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 
-  // Eye Icon Toggle Visibility
   eye.addEventListener('click', function () {
     const isPassword = inputbox.type === 'password';
     inputbox.type = isPassword ? 'text' : 'password';
     
+    // FIXED: Synchronized image names with absolute path format
     if (isPassword) {
-      eye.src = 'icons/eye-close-up.png';
+      eye.src = 'icons/eyebrow.png';
       eye.title = 'Hide Password';
     } else {
-      eye.src = 'icons/eyebrow.png';
+      eye.src = 'icons/eye-close-up.png';
       eye.title = 'Show Password';
     }
   });

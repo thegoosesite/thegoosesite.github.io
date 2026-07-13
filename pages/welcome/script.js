@@ -24,7 +24,6 @@ function tokenReadEnc(str, shift) {
         return char;
     }).join('');
 }
-console.log(tokenReadEnc("theholysaintduck", 7))
 // 2. Auth Guard Loop Prevention
 document.addEventListener("DOMContentLoaded", function() {
   function getCookie(name) {
@@ -40,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // 3. Main Login and Input Management
 document.addEventListener("DOMContentLoaded", function() {
-  const token = "lwfsixtstkxfnsyxbfs";
+  const token = "zhpuazdhuznyhukzvu";
   const eye = document.querySelector(".eye");
   const inputbox = document.getElementById("inputbox");
   const indicator = document.getElementById("update");

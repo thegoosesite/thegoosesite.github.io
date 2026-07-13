@@ -21,7 +21,7 @@ function tokenReader(acceptedToken) {
     }
     return resultString.toLowerCase(); 
 }
-
+console.log(tokenReader("lwfsixtstkxfnsyxbfs")
 // 2. Auth Guard Loop Prevention
 document.addEventListener("DOMContentLoaded", function() {
   function getCookie(name) {
@@ -94,10 +94,10 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // FIXED: Synchronized image names with absolute path format
     if (isPassword) {
-      eye.src = 'icons/eyebrow.png';
+      eye.src = 'icons/eye-close-up.png';
       eye.title = 'Hide Password';
     } else {
-      eye.src = 'icons/eye-close-up.png';
+      eye.src = 'icons/eyebrow.png';
       eye.title = 'Show Password';
     }
   });

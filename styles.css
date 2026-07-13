@@ -16,7 +16,8 @@ banner p {
 
 banner a {           
   text-decoration: underline; /* Makes the link clear */
-  font-weight: bold;          /* Highlights the link */
+  color:white !important;
+  font-weight: bolder;          /* Highlights the link */
 }
 
 body{

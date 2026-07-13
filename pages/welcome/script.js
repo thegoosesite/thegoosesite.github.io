@@ -3,25 +3,28 @@ const range = 26;
 const aCode = 65;
 const zCode = aCode + range;
 
-function tokenReader(acceptedToken) {
-    let NewAcceptedToken = acceptedToken.toUpperCase();
-    let resultString = ""; 
-
-    for (let i = 0; i < NewAcceptedToken.length; i++) { 
-        let letter = NewAcceptedToken.charCodeAt(i);
-        let newLetter = letter;
+function tokenReadEnc(str, shift) {
+    // Handle shifts larger than 26 or negative shifts
+    const normalizedShift = ((shift % 26) + 26) % 26;
+    
+    return str.split('').map(char => {
+        const code = char.charCodeAt(0);
         
-        if (letter >= aCode && letter < zCode) { 
-            newLetter += key;
-            if (newLetter >= zCode) {
-                newLetter -= range;
-            }
+        // Uppercase letters (A-Z: 65-90)
+        if (code >= 65 && code <= 90) {
+            return String.fromCharCode(((code - 65 + normalizedShift) % 26) + 65);
         }
-        resultString += String.fromCharCode(newLetter); 
-    }
-    return resultString.toLowerCase(); 
+        
+        // Lowercase letters (a-z: 97-122)
+        if (code >= 97 && code <= 122) {
+            return String.fromCharCode(((code - 97 + normalizedShift) % 26) + 97);
+        }
+        
+        // Return punctuation, spaces, and numbers unmodified
+        return char;
+    }).join('');
 }
-console.log(tokenReader("lwfsixtstkxfnsyxbfs"))
+console.log(tokenReadEnc("theholysaintduck", 7))
 // 2. Auth Guard Loop Prevention
 document.addEventListener("DOMContentLoaded", function() {
   function getCookie(name) {
@@ -55,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function() {
       return;
     }
 
-    if (tokenReader(currentText) === token) { 
+    if (tokenReadEnc(currentText, 7) === token) { 
       indicator.textContent = "✔";
       indicator.className = "indicator correct";
       setTimeout(() => {

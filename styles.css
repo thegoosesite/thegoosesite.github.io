@@ -2,7 +2,6 @@
 .site-banner {
   background-color: #3e67d6 !important; /* Banner background color */
   background-image:linear-gradient(to left, #3e67d6, #3e67d6);
-  color: white !important;             /* Text color */
   text-align: center;         /* Centered content */
   padding: 12px 20px;         /* Vertical and horizontal spacing */
   font-family: 'Comic Sans MS;    /* Clean typography */
@@ -15,7 +14,7 @@ banner p {
 }
 
 banner a {
-  color: #ffffff;             /* Keeps link text white */
+  color: black;             /* Keeps link text white */
   text-decoration: underline; /* Makes the link clear */
   font-weight: bold;          /* Highlights the link */
 }

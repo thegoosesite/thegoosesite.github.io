@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function(){
   const head = document.head;
   const codeNormal = `    <nav>
@@ -68,19 +67,29 @@ const codeNSI = `
         <h1 class='f1'>The Goose Site</h1>
     </footer>
   `;
+  
   function getCookie(name) {
     let match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
     if (match) return match[2];
     return null;
   }
   
-  // 2. If the cookie 'site_access' isn't exactly 'granted', kick them out
+  // Set up the target redirect URL var
+  // Var is depreciated so let
+  let redirectUrl = "";
+
   if (getCookie('site_access') === 'granted') {
     document.body.innerHTML = codeNormal;
     head.insertAdjacentHTML('beforeend', `<link rel="stylesheet" href="https://worshipthegoose.github.io/cursor.css" />`);
-    
+    redirectUrl = "http://worshipthegoose.github.io"; // Gooseling Website
   } else {
     document.body.innerHTML = codeNSI;
     head.insertAdjacentHTML('beforeend', `<link rel="icon" type="image/x-icon" href="https://worshipthegoose.github.io/favicon.ico">`);
+    redirectUrl = "https://worshipthegoose.github.io/pages/welcome"; // Guest Website
   }
+
+  // Actual logic to perform the redirect after 3 seconds
+  setTimeout(() => {
+    window.location.href = redirectUrl;
+  }, 3000);
 });

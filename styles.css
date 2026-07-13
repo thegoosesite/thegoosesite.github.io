@@ -1,4 +1,24 @@
 /* This is the CSS file for index.html */
+.site-banner {
+  background-color: #3e67d6; /* Banner background color */
+  color: white !important;             /* Text color */
+  text-align: center;         /* Centered content */
+  padding: 12px 20px;         /* Vertical and horizontal spacing */
+  font-family: 'Comic Sans MS;    /* Clean typography */
+  font-size: 16px;            /* Readable text size */
+
+}
+
+banner p {
+  margin: 0;                  /* Removes default browser margins */
+}
+
+banner a {
+  color: #ffffff;             /* Keeps link text white */
+  text-decoration: underline; /* Makes the link clear */
+  font-weight: bold;          /* Highlights the link */
+}
+
 body{
     /* RESET ALL MARGINS! */
     margin:0; 

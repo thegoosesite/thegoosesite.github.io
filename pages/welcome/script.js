@@ -1,4 +1,6 @@
-// 1. Caesar Cipher Engine (Repaired and Fixed)
+// 1. Caesar Cipher Engine (Repaired and Fixed) 
+// Fun fact! I imported this from one of my old CODEPEN projects from two years ago. I did have to do a little moderization
+// (e.g. replacing "var" with "let" and "const") but overall it looks good!
 const key = 5;
 const range = 26;
 const aCode = 65;

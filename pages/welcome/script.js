@@ -21,7 +21,7 @@ function tokenReader(acceptedToken) {
     }
     return resultString.toLowerCase(); 
 }
-console.log(tokenReader("lwfsixtstkxfnsyxbfs")
+console.log(tokenReader("lwfsixtstkxfnsyxbfs"))
 // 2. Auth Guard Loop Prevention
 document.addEventListener("DOMContentLoaded", function() {
   function getCookie(name) {

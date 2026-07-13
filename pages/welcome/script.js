@@ -1,14 +1,55 @@
-import { tokenReader } from "https://raw.githubusercontent.com/worshipthegoose/worshipthegoose.github.io/refs/heads/main/pages/welcome/token-catcher.js";
+// 1. Caesar Cipher Engine (Repaired and Fixed)
+const key = 5;
+const range = 26;
+const aCode = 65;
+const zCode = aCode + range;
+
+function tokenReader(acceptedToken) {
+    let NewAcceptedToken = acceptedToken.toUpperCase();
+    let resultString = ""; // Store the final output string
+
+    for (let i = 0; i < NewAcceptedToken.length; i++) { // FIXED: Use NewAcceptedToken
+        let letter = NewAcceptedToken.charCodeAt(i);
+        let newLetter = letter;
+        
+        if (letter >= aCode && letter < zCode) { // FIXED: Range bounds
+            newLetter += key;
+            if (newLetter >= zCode) {
+                newLetter -= range;
+            }
+        }
+        resultString += String.fromCharCode(newLetter); // FIXED: Build the string
+    }
+    return resultString.toLowerCase(); // FIXED: Return lowercase to match your token variable
+}
+
+// 2. Auth Guard Loop Prevention
+document.addEventListener("DOMContentLoaded", function() {
+  function getCookie(name) {
+    let match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+    if (match) return match[2];
+    return null;
+  }
+  
+  // If already logged in, redirect to home
+  if (getCookie('site_access') === 'granted' && window.location.pathname !== '/') {
+    window.location.href = 'https://worshipthegoose.github.io'; 
+  }
+});
+
+// 3. Main Login and Input Management
 document.addEventListener("DOMContentLoaded", function() {
   const token = "lwfsixtstkxfnsyxbfs";
   const eye = document.querySelector(".eye");
   const inputbox = document.getElementById("inputbox");
   const indicator = document.getElementById("update");
   const ex = document.querySelector("#clear");
-  inputbox.addEventListener('input', (event) => {
+
+  if (!inputbox || !eye) return; // Prevent console errors if elements are missing
+
+  inputbox.addEventListener('input', () => {
     const currentText = inputbox.value;
 
-    // Handle empty input state safely
     if (currentText === "") {
       indicator.textContent = "-";
       indicator.className = "indicator static";
@@ -16,7 +57,8 @@ document.addEventListener("DOMContentLoaded", function() {
       return;
     }
 
-    if (tokenReader(currentText) === token) { // That wass the last page the user visited
+    // Process the input using the corrected cipher function
+    if (tokenReader(currentText) === token) { 
       indicator.textContent = "✔";
       indicator.className = "indicator correct";
       setTimeout(() => {
@@ -31,30 +73,27 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 
+  // Block non-letters (except controls)
   inputbox.addEventListener('keydown', (event) => {
     const isLetter = /^[a-zA-Z]$/.test(event.key);
     const isControlKey = event.key.length > 1; 
 
     if (!isLetter && !isControlKey) {
-      console.log('Non-letter key blocked');
       event.preventDefault(); 
     }
   });
 
+  // Eye Icon Toggle Visibility
   eye.addEventListener('click', function () {
-  // 1. Check if the input is currently a password field
-  const isPassword = inputbox.type === 'password';
-  
-  // 2. Toggle the type attribute
-  inputbox.type = isPassword ? 'text' : 'password';
-  
-  // 3. Sync the image src and title cleanly based on the state
-  if (isPassword) {
-    eye.src = 'icons/eye-close-up.png';
-    eye.title = 'Hide Password';
-  } else {
-    eye.src = 'icons/eyebrow.png';
-    eye.title = 'Show Password';
-  }
-});
+    const isPassword = inputbox.type === 'password';
+    inputbox.type = isPassword ? 'text' : 'password';
+    
+    if (isPassword) {
+      eye.src = 'icons/eye-close-up.png';
+      eye.title = 'Hide Password';
+    } else {
+      eye.src = 'icons/eyebrow.png';
+      eye.title = 'Show Password';
+    }
+  });
 });

@@ -36,7 +36,11 @@ document.addEventListener("DOMContentLoaded", function() {
     window.location.href = 'https://worshipthegoose.github.io'; 
   }
 });
-
+function disclaimer(){
+  console.log(
+    "Hey, you! What are you doing here!\nYou know you're not supposed to be here.\nGo ahead, look at the Javascript source code. See the password?\nNope!"
+  )
+}
 // 3. Main Login and Input Management
 document.addEventListener("DOMContentLoaded", function() {
   const token = "zhpuazdhuznyhukzvu";
@@ -44,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const inputbox = document.getElementById("inputbox");
   const indicator = document.getElementById("update");
   const ex = document.querySelector("#clear");
-
+  disclaimer()
   if (!inputbox || !eye || !ex) return; 
 
   inputbox.addEventListener('input', () => {

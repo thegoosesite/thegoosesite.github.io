@@ -240,15 +240,22 @@ document.addEventListener("DOMContentLoaded",function(){
                 ball.dy *= -1;
             } 
             // Bottom bounds (Paddle contact / Lose life)
+            // Bottom bounds (Paddle contact / Lose life)
             else if (ball.y + ball.dy > paddle.y - ball.radius) {
-                if (ball.x + ball.radius > paddle.x && ball.x - ball.radius < paddle.x + paddle.width){
+                // Check if the ball is horizontally aligned with the paddle
+                if (ball.x + ball.radius > paddle.x && ball.x - ball.radius < paddle.x + paddle.width) {
+                    // Calculate bounce angle based on where the ball hit the paddle
                     let angle = (Math.PI / 2) * (paddle.x + (paddle.width / 2) - ball.x) / (paddle.width / 2);
                     ball.dx = -1 * (Math.sin(angle) * ball.speed);
                     ball.dy = -1 * (Math.cos(angle) * ball.speed);
-                } else {
+                    
+                    ball.y = paddle.y - ball.radius; 
+                } 
+                // Only lose a life if the ball actually misses the paddle and goes off the bottom of the screen
+                else if (ball.y + ball.dy > canvas.height - ball.radius) {
                     lives -= 1;
                     if (livesText) livesText.innerHTML = lives;
-                    if (lives < 1){
+                    if (lives < 1) {
                         if (statis) statis.innerText = "Game Over";
                         if (restartButton) restartButton.textContent = "Restart";
                         clearInterval(gameInterval);

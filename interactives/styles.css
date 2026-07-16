@@ -19,6 +19,11 @@
 .BBbreakout{
     -webkit-text-stroke:0.075rem white !important;
 }
+.BBejectlnk{
+    color:black;
+    text-decoration: underline;
+    font-size:19px;
+}
 .BBselector{
     border-radius:12px;
     -webkit-text-stroke:0.075rem black;

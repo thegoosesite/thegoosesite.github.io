@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brick Breaker EJECTED! - The Goose Site</title>
     <link rel="stylesheet" href="../../styles.css">
-    <link rel="stylesheet" href="../../brickbreaker.js">
+    <script src="../../brickbreaker.js" defer></script>
 </head>
 <body>
     <div class="BBselector" id="brick-breaker">
@@ -17,7 +17,7 @@
         </div>
         <div class="BBcontent">
             <div class="blue">
-            <p class="BBstatus">Press start.</p><canvas class="BBcanvas"></canvas><table class="BBtable"><tr><td><div>Score:</div><div class="BBgooscore">0</div></td><td><div>Lives:</div><div class="BBlives">0</div></td><td><button class="BBrestart">Start</button></td></tr></table><br><a class="BBejectlnk" href="javascript:window.close()">Click to un-eject...</a></div>
+            <p class="BBstatus">Press start.</p><canvas class="BBcanvas"></canvas><table class="BBtable"><tr><td><div>Score:</div><div class="BBgooscore">0</div></td><td><div>Lives:</div><div class="BBlives">0</div></td><td><button class="BBrestart">Start</button></td></tr></table><br><a class="BBejectlnk" onclick="window.close()">Click to un-eject...</a></div>
         </div>
     </div>
 </body>

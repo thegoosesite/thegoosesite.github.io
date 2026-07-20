@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", () => { // Getting JS Ready
         console.log("JS is ready!")
         console.log("Jquery is ready!")
         // Necessary goosounds
-        const goosound1 = new Audio("https://worshipthegoose.github.io/holy.mp3");
-        const goosound2 = new Audio("https://worshipthegoose.github.io/Win.mp3");
+        const goosound1 = new Audio("https://thegoosesite.github.io/holy.mp3");
+        const goosound2 = new Audio("https://thegoosesite.github.io/Win.mp3");
         // A delay function! 
         function delay(ms) {
             return new Promise(resolve => setTimeout(resolve, ms)); //
@@ -21,10 +21,10 @@ document.addEventListener("DOMContentLoaded", () => { // Getting JS Ready
             goosound2.play();
         });
         $(".youtube").click(async () => {
-            window.location.href = "https://worshipthegoose.github.io/youtube";
+            window.location.href = "https://thegoosesite.github.io/youtube";
         });
         $(".slides").click(async () => {
-            window.location.href = "https://worshipthegoose.github.io/powerpoint";
+            window.location.href = "https://thegoosesite.github.io/powerpoint";
         });
         $('.worshipper').on('click', function() {
           goosound1.play();

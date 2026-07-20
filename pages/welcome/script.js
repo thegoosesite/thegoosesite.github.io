@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
   
   if (getCookie('site_access') === 'granted' && window.location.pathname !== '/') {
-    window.location.href = 'https://worshipthegoose.github.io'; 
+    window.location.href = 'https://thegoosesite.github.io'; 
   }
 });
 function disclaimer(){
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function() {
       indicator.className = "indicator correct";
       setTimeout(() => {
         document.cookie = "site_access=granted; max-age=" + (60 * 60 * 24 * 7) + "; path=/; SameSite=Strict";
-        window.location.href = 'https://worshipthegoose.github.io/';
+        window.location.href = 'https://thegoosesite.github.io/';
       }, 300);
       ex.style.display = "none";
     } else {

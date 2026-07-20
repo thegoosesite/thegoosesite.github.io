@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function(){
   }
   
   // Prevent infinite loop if already on the login page
-  const loginPage = 'https://worshipthegoose.github.io/pages/welcome/';
+  const loginPage = 'https://thegoosesite.github.io/pages/welcome/';
   if (window.location.href === loginPage) return;
 
   // If the cookie 'site_access' isn't exactly 'granted', kick them out 

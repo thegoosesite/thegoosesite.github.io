@@ -1,38 +1,38 @@
-document.addEventListener("DOMContentLoaded", function () {
+/*document.addEventListener("DOMContentLoaded", function () {
   const PAGES = [
   {
       title: "Home Page",
-      url: "https://worshipthegoose.github.io",
+      url: "https://thegoosesite.github.io",
       content: "Welcome to everyone except Saam! Repent your goosins at St. Duck's Church",
       keywords: "home, welcome, main, index, goose, goosism, repent, worship"
   },
   {
       title: "The Youtube Channel",
-      url: "https://worshipthegoose.github.io/youtube",
+      url: "https://thegoosesite.github.io/youtube",
       content: "Subscribe or die.",
       keywords: "youtube, holy, channel, yt"
   },
     {
       title: "The Unity Videos",
-      url: "https://worshipthegoose.github.io/videos",
+      url: "https://thegoosesite.github.io/videos",
       content: "Worship, pray, and repent with the unity videos.",
       keywords: "goose videos, quite holy, channel, videos, unity"
   },
   {
       title: "The Trinity Slideshows",
-      url: "https://worshipthegoose.github.io/powerpoint",
+      url: "https://thegoosesite.github.io/powerpoint",
       content: "Pray with the trinity slideshows...",
       keywords: "slides, powerpoint, microsoft, trinity, slideshow, slideshows"
   },
   {
       title: "The Holy Goose Bible",
-      url: "https://worshipthegoose.github.io/bible",
+      url: "https://thegoosesite.github.io/bible",
       content: "Read the holy goose bible and cherish it for life.",
       keywords: "quran, bible, book, gooseling, holy"
   },
   {
     title: "Dancing Monster",
-    url: "https://worshipthegoose.github.io/saint-rainbowhairs",
+    url: "https://thegoosesite.github.io/saint-rainbowhairs",
     content: "Secret page... Saint Rainbowhairs",
     keywords: "supercalifragilisticexpialidocious, rainbowhairscanonization"
   },
@@ -82,6 +82,6 @@ function performSearch(query){
   searchInput.addEventListener('input', (e) => {
     performSearch(e.target.value);
   });
-}
 });
 
+*/

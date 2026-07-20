@@ -128,7 +128,13 @@ nav {
     margin: 0 auto;
     position: relative;
 }
-
+/* Okay Button Styling */
+.ok-btn-popup{
+    box-shadow:rgba(0, 0, 0, 0.15);
+    background-color:darkorange;
+    background-image: linear-gradient(to left, orange, darkorange, orangered);
+    color:#333;
+}
 /* Close Button Styling */
 .close-btn {
     position: absolute;

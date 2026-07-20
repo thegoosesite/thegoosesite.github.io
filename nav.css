@@ -116,12 +116,14 @@ nav {
     transition: transform 0.3s ease-out;
     z-index: 1000;
     box-sizing: border-box;
+    border: 1px dashed darkorange;
 }
 
 /* Inside Content Wrapper */
 .popup-content {
+    width: 100%;
+    max-width:100%;
     padding: 24px;
-    max-width: 600px;
     margin: 0 auto;
     position: relative;
 }

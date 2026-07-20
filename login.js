@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
         <p>Our developers have made an executive decision to move The Goose Site from "worshipthegoose.github.io" to "thegoosesite.github.io"</p>
         <p>We believe this will help gooselings find their way to our site easier since the "worshipthegoose" branding is barely used.</p>
         <p>Don't worry -- GOOSE short links will stay in place at their original URLs. </p>
-        <button class='ok-btn-popup' onclick='togglePopup(false)'>Goose.</button>
+        <button class='ok-btn-popup' onclick='togglePopup(false)' title="Okay!">Goose.</button>
       </div>
     </div>`;
 

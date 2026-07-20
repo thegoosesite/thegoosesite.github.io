@@ -1,6 +1,6 @@
 document.querySelector("#appOpener").addEventListener('click', () => {
   // 1. Fixed the URL protocol and changed semicolons to commas
-  const popup = window.open(window.location.href, 'popup', 'popup=true,width=600,height=400');
+  const popup = window.open('https://thegoosesite.github.io?appopen', 'popup', 'popup=true,width=600,height=400');
   
   // 2. Hide the body content visually instead of destroying the JS environment
   document.body.style.opacity = "0"; 

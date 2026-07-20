@@ -99,6 +99,9 @@ nav {
     pointer-events: none;
     transition: opacity 0.3s ease;
     z-index: 999;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 /* The Popup Container locked to the bottom */
@@ -138,8 +141,10 @@ nav {
     border-radius: 7px;
     border:none;
     transition: transform 0.3s ease;
+    font-size:29px;
+    margin:0 auto;
 }
-.ok-btn-popup{
+.ok-btn-popup:hover{
     background-image:linear-gradient(to right, orange, darkorange, orangered);
     transform:scale(1.2);
 }

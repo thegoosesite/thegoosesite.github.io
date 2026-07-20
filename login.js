@@ -38,9 +38,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     <!-- The Actual Popup Structure -->
     <div class="bottom-popup" id="bottomPopup">
+    <button class="close-btn" onclick="togglePopup(false)">&times;</button>
       <div class="popup-content">
-        <button class="close-btn" onclick="togglePopup(false)">&times;</button>
-        <h2>Important GOOSE reminder.</h2>
+        <h2>🪿 Important GOOSE reminder 🪿</h2>
         <h4>We have recently moved our website domain name.</h4>
         <p>Our developers have made an executive decision to move The Goose Site from "worshipthegoose.github.io" to "thegoosesite.github.io"</p>
         <p>We believe this will help gooselings find their way to our site easier since the "worshipthegoose" branding is barely used.</p>

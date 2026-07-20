@@ -108,7 +108,7 @@ nav {
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: gainsboro;
+    background-color: lightblue;
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
     box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.15);
@@ -116,7 +116,7 @@ nav {
     transition: transform 0.3s ease-out;
     z-index: 1000;
     box-sizing: border-box;
-    border: 1px dashed darkorange;
+    border: 5px dashed darkorange;
 }
 
 /* Inside Content Wrapper */

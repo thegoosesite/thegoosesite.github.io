@@ -134,6 +134,14 @@ nav {
     background-color:darkorange;
     background-image: linear-gradient(to left, orange, darkorange, orangered);
     color:#333;
+    font-family:'Comic Sans MS';
+    border-radius: 7px;
+    border:none;
+    transition: transform 0.3s ease;
+}
+.ok-btn-popup{
+    background-image:linear-gradient(to right, orange, darkorange, orangered);
+    transform:scale(1.2);
 }
 /* Close Button Styling */
 .close-btn {

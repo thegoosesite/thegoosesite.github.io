@@ -1,17 +1,29 @@
-document.querySelector("#appOpener").addEventListener('click', () => {
-  // 1. Fixed the URL protocol and changed semicolons to commas
-  const popup = window.open('https://thegoosesite.github.io?appopen', 'popup', 'popup=true,width=600,height=400');
+// Wrap inside a DOMContentLoaded listener to guarantee the button exists
+document.addEventListener('DOMContentLoaded', () => {
+  const opener = document.querySelector("#appOpener");
   
-  // 2. Hide the body content visually instead of destroying the JS environment
-  document.body.style.opacity = "0"; 
-  document.body.style.pointerEvents = "none"; // Prevents further clicks
+  if (!opener) return; // Safeguard if element is missing
 
-  const checkClosed = setInterval(() => {
-    // 3. Added a safety check to ensure the popup object exists
-    if (!popup || popup.closed) {
-        clearInterval(checkClosed);
-        console.log('Popup window is closed. Reloading ammo');
-        window.location.reload();
-    }
-  }, 500); 
+  opener.addEventListener('click', () => {
+    // Standardized width/height params without arbitrary 'popup=true' string
+    const popup = window.open('https://thegoosesite.github.io?appopen', 'popup', 'width=600,height=400');
+    
+    // Hide the body visually
+    document.body.style.opacity = "0"; 
+    document.body.style.pointerEvents = "none"; 
+
+    const checkClosed = setInterval(() => {
+      try {
+        // Safe check logic: if popup is blocked, missing, or confirmed closed
+        if (!popup || popup.closed) {
+            clearInterval(checkClosed);
+            console.log('Popup window is closed. Reloading ammo!');
+            window.location.reload();
+        }
+      } catch (crossOriginError) {
+        // Fallback: If a cross-origin error occurs, the window is still open.
+        // We catch the error silently so the execution doesn't crash.
+      }
+    }, 500); 
+  });
 });

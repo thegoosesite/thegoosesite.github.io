@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const checkClosed = setInterval(() => {
       if (popup.closed) {
           clearInterval(checkClosed);
-          console.log('Popup window is closed. Reloading ammo');
+          console.log('Popup window is closed. Reloading ammo'); //
            window.location.reload();
       }
     }, 500); // Checks every 500ms

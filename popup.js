@@ -1,13 +1,17 @@
-
 document.querySelector("#appOpener").addEventListener('click', () => {
-  const popup = window.open('thegoosesite.github.io', 'popup', 'popup=true;width=600,height=400');
-  document.querySelector("body").innerHTML = "";
-  const checkClosed = setInterval(() => {
-    if (popup.closed) {
-        clearInterval(checkClosed);
-        console.log('Popup window is closed. Reloading ammo'); //
-          window.location.reload();
-    }
-  }, 500); // Checks every 500ms
-});
+  // 1. Fixed the URL protocol and changed semicolons to commas
+  const popup = window.open(window.location.href, 'popup', 'popup=true,width=600,height=400');
+  
+  // 2. Hide the body content visually instead of destroying the JS environment
+  document.body.style.opacity = "0"; 
+  document.body.style.pointerEvents = "none"; // Prevents further clicks
 
+  const checkClosed = setInterval(() => {
+    // 3. Added a safety check to ensure the popup object exists
+    if (!popup || popup.closed) {
+        clearInterval(checkClosed);
+        console.log('Popup window is closed. Reloading ammo');
+        window.location.reload();
+    }
+  }, 500); 
+});

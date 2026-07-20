@@ -86,3 +86,64 @@ nav {
     width:24px !important;
     height: 24px !important;
 }
+/* Snooping: Adding banner code */
+.popup-overlay {
+    font-family: 'Comic Sans MS' !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 999;
+}
+
+/* The Popup Container locked to the bottom */
+.bottom-popup {
+    font-family: 'Comic Sans MS' !important;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: gainsboro;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.15);
+    transform: translateY(100%);
+    transition: transform 0.3s ease-out;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+/* Inside Content Wrapper */
+.popup-content {
+    padding: 24px;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Close Button Styling */
+.close-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+}
+
+/* Active Classes managed by JavaScript */
+.popup-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.bottom-popup.active {
+    transform: translateY(0);
+}

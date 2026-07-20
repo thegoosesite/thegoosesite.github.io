@@ -109,6 +109,7 @@ nav {
     left: 0;
     width: 100%;
     background-color: lightblue;
+    background-image: linear-gradient(to left, lightblue, lightskyblue, dodgerblue);
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
     box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.15);

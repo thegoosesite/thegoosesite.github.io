@@ -11,3 +11,10 @@ main{
     margin-top:120px;
     
 }
+nav {
+    margin-bottom: 50px;
+    position:fixed;
+    top:0;
+    width:100%;
+    max-width:100%;
+}

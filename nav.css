@@ -10,14 +10,6 @@
     position: relative;
     min-height: 54px; /* Keeps the orange bar filled without using overflow:hidden */
 }
-
-nav {
-    margin-bottom: 50px;
-    position:fixed;
-    top:0;
-    width:100%;
-    max-width:100%;
-}
 .dad {
     display: block;
 }

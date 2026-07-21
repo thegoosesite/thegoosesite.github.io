@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (match) return match[2];
     return null;
   }
-  
+
   const loginPage = 'https://thegoosesite.github.io/pages/welcome/';
   if (window.location.href === loginPage) return;
 
@@ -30,7 +30,13 @@ document.addEventListener("DOMContentLoaded", function() {
     window.location.href = loginPage; 
     return; // Stop executing the rest of the script if redirecting
   } 
-
+  // --- CTRL A LOGIC ---
+   document.addEventListener('keydown', function(event) {
+    // Check for Ctrl+A or Cmd+A
+    if ((event.ctrlKey || event.metaKey) && event.key === 'a') {
+        event.preventDefault();
+    }
+  });
   // --- BANNER & POPUP LOGIC ---
   const bannertext = `
     <!-- Dark Background Overlay -->

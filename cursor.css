@@ -7,3 +7,7 @@ button, a, #goose, .goose, #image{
 body {
   background-image: url('https://thegoosesite.github.io/assets/images/background.png') !important;
 }
+main{
+    margin-top:120px;
+    
+}

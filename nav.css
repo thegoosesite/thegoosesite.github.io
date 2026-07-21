@@ -13,6 +13,8 @@
 
 nav {
     margin-bottom: 50px;
+    position:fixed;
+    top:0;
 }
 .dad {
     display: block;

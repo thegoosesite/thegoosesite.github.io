@@ -87,6 +87,12 @@ smalltext{
     gap:3px;
     max-width: 60%;
 }
+.wall{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
 .announcement{
     border-radius:12px;
     color:black;

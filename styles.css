@@ -31,7 +31,8 @@ body{
     
     /* Flexbox */
     display: flex;
-    justify-content: center;
+    justify-content: center !important;
+    align-items:center !important;
     flex-direction: column;
     min-height: 100vh; /* Takes full viewport height */
     margin: 0;
@@ -81,7 +82,10 @@ smalltext{
     display:inline-block;
 }
 .hello.hello2{
+    position:fixed;
     max-width:62%;
+    top: 50%;
+    left: 50%;
 }
 .bulletin{
     border-radius:12px;

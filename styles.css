@@ -28,12 +28,9 @@ body{
     /* Text styles */
     font-family: 'Comic Sans MS';
     color:white;
-
-
-
-    /**/
+    
     /* Flexbox */
-    display: flex;
+    display: grid;
     justify-content: center;
     flex-direction: column;
     min-height: 100vh; /* Takes full viewport height */
@@ -79,9 +76,12 @@ smalltext{
     background-color: gainsboro;
     margin:20px;
     padding:10px;
+}
+.hello.hellolite{
     display:inline-block;
+}
+.hello.hello2{
     max-width:62%;
-    margin:0 auto;
 }
 .bulletin{
     border-radius:12px;

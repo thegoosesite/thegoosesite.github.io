@@ -31,8 +31,6 @@ body{
     
     /* Flexbox */
     display: flex;
-    justify-content: center !important;
-    align-items:center !important;
     flex-direction: column;
     min-height: 100vh; /* Takes full viewport height */
     margin: 0;
@@ -50,9 +48,9 @@ body::selection{
     background-color: yellow;
 }
 main{
-    display:flex;
-    justify-content: center;
+    display:grid;
     flex-direction:column;
+    place-items: center;
 }
 /* Everything else */
 h1, p, h2, h3, h4, h5{

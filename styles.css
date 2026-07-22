@@ -30,7 +30,7 @@ body{
     color:white;
     
     /* Flexbox */
-    display: grid;
+    display: flex;
     justify-content: center;
     flex-direction: column;
     min-height: 100vh; /* Takes full viewport height */

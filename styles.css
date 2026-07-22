@@ -30,6 +30,7 @@ body{
     color:white;
     /* Flexbox */
     display: flex;
+    justify-content: center;
     flex-direction: column;
     min-height: 100vh; /* Takes full viewport height */
     margin: 0;
@@ -76,6 +77,7 @@ smalltext{
     padding:10px;
     display:inline-block;
     max-width:62%;
+    margin:0 auto;
 }
 .bulletin{
     border-radius:12px;

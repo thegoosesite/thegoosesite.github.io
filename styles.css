@@ -28,6 +28,10 @@ body{
     /* Text styles */
     font-family: 'Comic Sans MS';
     color:white;
+
+
+
+    /**/
     /* Flexbox */
     display: flex;
     justify-content: center;

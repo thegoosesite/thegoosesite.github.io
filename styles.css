@@ -84,8 +84,8 @@ smalltext{
 .hello.hello2{
     position:fixed;
     max-width:62%;
-    top: 50%;
     left: 50%;
+    right:50%;
 }
 .bulletin{
     border-radius:12px;

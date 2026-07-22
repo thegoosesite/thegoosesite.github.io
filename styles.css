@@ -88,6 +88,7 @@ smalltext{
     max-width: 60%;
 }
 .wall{
+    max-width:62%;
     display:flex;
     flex-direction:column;
     justify-content: center;

@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Grant Access & Clean Up
-    document.cookie = "site_access=granted; SameSite=Strict; path=/;";
+    document.cookie = "site_access=granted; Max-Age=600; SameSite=Strict; path=/;";
     localStorage.removeItem(`token_${tokenVal}`);
 
     // Inject and show authorization message
@@ -85,6 +85,7 @@ document.addEventListener("DOMContentLoaded", function() {
           <button class="close-btn" onclick="togglePopup(false)">&times;</button>
           <h2>A Gooseling Just Authorized Your Visit</h2>
           <p>Your one-time access link has been verified.</p>
+          <strong>Access ends in 10 minutes! Better hurry!</strong>
           <center><button class='ok-btn-popup okrev' onclick='togglePopup(false)'>Close Message</button></center>
         </div>
       </div>

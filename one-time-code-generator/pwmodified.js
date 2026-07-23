@@ -29,7 +29,7 @@ function tokenReadEnc(str, shift) {
 }
 
 function openSesame() {
-  const container = document.querySelector(".inputContainer");
+  const container = document.querySelector(".input-container");
   if (container) {
     container.remove();
   }
@@ -41,9 +41,9 @@ function openSesame() {
     </center>
   `;
 
-  const main = document.querySelector("main");
-  if (main) {
-    main.insertAdjacentHTML("beforeend", code2Import);
+  const hello = document.querySelector(".hello");
+  if (hello) {
+    hello.insertAdjacentHTML("beforeend", code2Import);
   }
 }
 

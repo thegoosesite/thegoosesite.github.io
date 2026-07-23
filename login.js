@@ -79,10 +79,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Grant Access & Clean Up
     document.cookie = "site_access=granted; Max-Age=600; SameSite=Strict; path=/;";
     localStorage.removeItem(`token_${tokenVal}`);
-
-    // Clean query parameters from URL without reloading
-    const cleanUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
-    window.history.replaceState({ path: cleanUrl }, '', cleanUrl);
+    window.location.replace("https://worshipthegoose.github.io")
 
     // Inject and show authorization message
     injectAndShowBanner(`

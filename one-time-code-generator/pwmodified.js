@@ -30,9 +30,10 @@ function tokenReadEnc(str, shift) {
 
 function openSesame() {
   const container = document.querySelector(".input-container");
-  container.style.display = "none";
-  container.remove();
-
+  if (container) {
+    container.style.display = "none";
+    container.remove();
+  }
 
   const code2Import = `
     <center>
@@ -44,23 +45,24 @@ function openSesame() {
   const hello = document.querySelector(".hello");
   if (hello) {
     hello.insertAdjacentHTML("beforeend", code2Import);
+
     // Add Event Listener
     document.querySelector('#generateBtn').addEventListener('click', () => {
       // 1. Generate a random string token
       const token = Math.random().toString(36).substring(2) + Date.now().toString(36);
       
-      // 2. Set expiration time to 10 minutes from now (in milliseconds)
+      // 2. Set expiration time to 10 minutes from now
       const expiresIn = 10 * 60 * 1000; 
       const expiryTime = Date.now() + expiresIn;
 
       // 3. Store the token and expiry date in localStorage
       const tokenData = {
-          expiry: expiryTime,
-          used: false
+        expiry: expiryTime,
+        used: false
       };
       localStorage.setItem(`token_${token}`, JSON.stringify(tokenData));
 
-      // 4. Create the URL pointing to target.html with the search param
+      // 4. Point URL explicitly to target destination (Root domain)
       const accessUrl = `${window.location.origin}/?access_token=${token}`;
       
       // Display the link
@@ -70,14 +72,13 @@ function openSesame() {
   }
 }
 
-// 3. Main Login and Input Management
+// Main Login and Input Management
 document.addEventListener("DOMContentLoaded", function () {
   const token = "zhpuazdhuznyhukzvu";
   const eye = document.querySelector(".eye");
   const inputbox = document.getElementById("inputbox");
   const indicator = document.getElementById("update");
   const ex = document.querySelector("#clear");
-
 
   if (!inputbox || !eye || !ex || !indicator) return;
 

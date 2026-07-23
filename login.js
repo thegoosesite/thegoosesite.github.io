@@ -22,8 +22,8 @@ document.addEventListener("DOMContentLoaded", function() {
     return match ? match[2] : null;
   }
 
-  // 1. Skip checks if already on the login page
-  if (window.location.href === loginPage) return;
+  // 1. Skip checks if already on the welcome page (checked via pathname)
+  if (window.location.pathname.endsWith('/pages/welcome/')) return;
 
   const urlParams = new URLSearchParams(window.location.search);
   const token = urlParams.get('access_token');
@@ -49,7 +49,8 @@ document.addEventListener("DOMContentLoaded", function() {
           <button class="close-btn" onclick="togglePopup(false)">&times;</button>
           <h2>🪿 Important GOOSE reminder 🪿</h2>
           <h4>We have recently moved our website domain name.</h4>
-          <p>Our developers moved The Goose Site to "thegoosesite.github.io".</p>
+          <p>Our developers moved The Goose Site from "worshipthegoose.github.io" to "thegoosesite.github.io".</p>
+          <p>We believe this will help gooselings find our site easier.</p>
           <center><button class='ok-btn-popup' onclick='togglePopup(false)'>Goose.</button></center>
         </div>
       </div>
@@ -61,6 +62,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const rawData = localStorage.getItem(`token_${tokenVal}`);
     
     if (!rawData) {
+      console.warn(`Token "token_${tokenVal}" not found in localStorage.`);
       window.location.replace(loginPage);
       return;
     }
@@ -68,6 +70,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const tokenData = JSON.parse(rawData);
 
     if (Date.now() > tokenData.expiry) {
+      console.warn(`Token "token_${tokenVal}" has expired.`);
       localStorage.removeItem(`token_${tokenVal}`);
       window.location.replace(loginPage);
       return;
@@ -76,6 +79,10 @@ document.addEventListener("DOMContentLoaded", function() {
     // Grant Access & Clean Up
     document.cookie = "site_access=granted; Max-Age=600; SameSite=Strict; path=/;";
     localStorage.removeItem(`token_${tokenVal}`);
+
+    // Clean query parameters from URL without reloading
+    const cleanUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+    window.history.replaceState({ path: cleanUrl }, '', cleanUrl);
 
     // Inject and show authorization message
     injectAndShowBanner(`
@@ -94,7 +101,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Helper to inject HTML and display popup safely
   function injectAndShowBanner(htmlContent) {
-    // Prevent duplicate banners if one already exists
     if (document.getElementById('popupOverlay')) return; 
     
     document.body.insertAdjacentHTML('beforeend', htmlContent);

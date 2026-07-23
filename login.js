@@ -22,19 +22,21 @@ document.addEventListener("DOMContentLoaded", function() {
     return match ? match[2] : null;
   }
 
-  // 1. Skip checks if already on the welcome page (checked via pathname)
-  if (window.location.pathname.endsWith('/pages/welcome/')) return;
-
   const urlParams = new URLSearchParams(window.location.search);
   const token = urlParams.get('access_token');
   const hasAccessCookie = getCookie('site_access') === 'granted';
+
+  // 1. If on welcome page WITHOUT a token, stop script execution (allow logging in)
+  if (window.location.pathname.endsWith('/pages/welcome/') && !token) {
+    return;
+  }
 
   // 2. Handle Access Verification
   if (!hasAccessCookie) {
     if (token) {
       verifyToken(token);
     } else {
-      // No cookie and no token -> redirect to welcome
+      // No cookie and no token -> redirect to welcome page
       window.location.replace(loginPage);
       return;
     }
@@ -79,21 +81,9 @@ document.addEventListener("DOMContentLoaded", function() {
     // Grant Access & Clean Up
     document.cookie = "site_access=granted; Max-Age=600; SameSite=Strict; path=/;";
     localStorage.removeItem(`token_${tokenVal}`);
-    window.location.replace("https://worshipthegoose.github.io")
 
-    // Inject and show authorization message
-    injectAndShowBanner(`
-      <div class="popup-overlay" id="popupOverlay" onclick="togglePopup(false)"></div>
-      <div class="bottom-popup" id="bottomPopup">
-        <div class="popup-content">
-          <button class="close-btn" onclick="togglePopup(false)">&times;</button>
-          <h2>A Gooseling Just Authorized Your Visit</h2>
-          <p>Your one-time access link has been verified.</p>
-          <strong>Access ends in 10 minutes! Better hurry!</strong>
-          <center><button class='ok-btn-popup okrev' onclick='togglePopup(false)'>Close Message</button></center>
-        </div>
-      </div>
-    `);
+    // Redirect to main site
+    window.location.replace("https://worshipthegoose.github.io");
   }
 
   // Helper to inject HTML and display popup safely

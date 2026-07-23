@@ -1,0 +1,16 @@
+#linkContainer a {
+    color:blue;
+    font-family: Comic Sans MS;
+}
+#generateBtn{
+    color:black !important;
+    background-color: lightgreen;
+    background-image: linear-gradient(to left, lightgreen, aquamarine, rgb(127, 255, 253));
+    border:1px solid black;
+    font-family: 'Comic Sans MS';
+    transition:transform 0.4s ease;
+}
+#generateBtn:hover{
+    background-image: linear-gradient(to right, lightgreen, aquamarine, rgb(127, 255, 253));
+    transform:scale(1.3);
+}

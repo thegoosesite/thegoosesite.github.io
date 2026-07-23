@@ -25,6 +25,7 @@ function tokenReadEnc(str, shift) {
     }).join('');
 }
 function openSesame(){
+    document.querySelector(".inputContainer").remove()
     code2Import = `
     <center><button id="generateBtn">Generate!</button><br><p id="linkContainer"></p>
     `

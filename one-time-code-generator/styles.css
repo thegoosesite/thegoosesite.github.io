@@ -24,3 +24,6 @@ main {
 body{
     font-family:Comic Sans MS !important;
 }
+.small{
+    font-size:12px !important;
+}

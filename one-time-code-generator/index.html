@@ -46,7 +46,21 @@
             <center><h1>Generate One-Time Link</h1>
             <p class="strongman"><strong>Warning: Do not send links to people who are not trustworthy. Otherwise, you may have your gooseling status revoked.</strong></p>
             </center>
-
+            <p class="strongman">
+                First, enter the gooseling password. 
+            </p>
+            <p class="strongman small">
+                To prevent macaroni attacks (getting a link from a gooseling and making new ones to stay on the site)<br>Name after that repeating macaroni gif.
+            </p>
+            <div class="input-container">
+            <div class="input-stuff">
+                <input style="position:relative !important" type="password" autocomplete="off" readonly onfocus="this.removeAttribute('readonly');" onblur="this.setAttribute('readonly', true);" placeholder="Please input the holy password..." id="inputbox" class="inputbox" title="Input the passcode...">
+                <button type="button" style="display: none;" id="clear" class="inputex">&times;</button>
+            </div>
+            <p id="update" style="color:silver;" class="update">-</p>
+            <!-- FIXED: Self closing tag and absolute URL pathing alignment -->
+            <img title="Show Password" class="eye" src="icons/eyebrow.png" />
+            </div>
         </div>
     </main>
     <footer>

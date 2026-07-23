@@ -26,23 +26,18 @@ document.addEventListener("DOMContentLoaded", function() {
   const token = urlParams.get('access_token');
   const hasAccessCookie = getCookie('site_access') === 'granted';
 
-  // 1. If on welcome page WITHOUT a token, stop script execution (allow logging in)
-  if (window.location.pathname.endsWith('/pages/welcome/') && !token) {
-    return;
-  }
-
-  // 2. Handle Access Verification
+  // 1. Access Verification Logic
   if (!hasAccessCookie) {
     if (token) {
       verifyToken(token);
     } else {
-      // No cookie and no token -> redirect to welcome page
+      // No valid cookie and no access token -> send to welcome/login page
       window.location.replace(loginPage);
       return;
     }
   }
 
-  // 3. Handle 'servermove' Banner Notice
+  // 2. Handle 'servermove' Banner Notice
   if (urlParams.has('servermove')) {
     injectAndShowBanner(`
       <div class="popup-overlay" id="popupOverlay" onclick="togglePopup(false)"></div>
@@ -69,7 +64,14 @@ document.addEventListener("DOMContentLoaded", function() {
       return;
     }
 
-    const tokenData = JSON.parse(rawData);
+    let tokenData;
+    try {
+      tokenData = JSON.parse(rawData);
+    } catch (e) {
+      console.error("Malformed token data.");
+      window.location.replace(loginPage);
+      return;
+    }
 
     if (Date.now() > tokenData.expiry) {
       console.warn(`Token "token_${tokenVal}" has expired.`);
@@ -82,8 +84,9 @@ document.addEventListener("DOMContentLoaded", function() {
     document.cookie = "site_access=granted; Max-Age=600; SameSite=Strict; path=/;";
     localStorage.removeItem(`token_${tokenVal}`);
 
-    // Redirect to main site
-    window.location.replace("https://worshipthegoose.github.io");
+    // Remove ?access_token from URL without refreshing/redirecting away
+    const cleanUrl = window.location.pathname + window.location.search.replace(/[\?&]access_token=[^&]+/, '').replace(/^&/, '?');
+    window.history.replaceState({}, document.title, cleanUrl || '/');
   }
 
   // Helper to inject HTML and display popup safely

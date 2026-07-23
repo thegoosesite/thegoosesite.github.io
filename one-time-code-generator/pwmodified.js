@@ -30,11 +30,9 @@ function tokenReadEnc(str, shift) {
 
 function openSesame() {
   const container = document.querySelector(".input-container");
-  container.classList.add('fade-out');
-  container.addEventListener('transitionend', () => {
-    container.remove();
-  }, { once: true });
-  
+  container.style.display = "none";
+  container.remove();
+
 
   const code2Import = `
     <center>

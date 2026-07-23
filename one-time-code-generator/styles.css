@@ -10,7 +10,7 @@
     font-family: 'Comic Sans MS';
     transition:transform 0.4s ease;
     border-radius:7px;
-    font-size:18px;
+    font-size:22px;
     padding:3px;
 }
 #generateBtn:hover{

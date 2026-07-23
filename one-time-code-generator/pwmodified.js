@@ -31,23 +31,6 @@ function openSesame(){
     const main = document.querySelector("main");
     main.insertAdjacentHTML("beforeend", code2Import)
 }
-// 2. Auth Guard Loop Prevention
-document.addEventListener("DOMContentLoaded", function() {
-  function getCookie(name) {
-    let match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
-    if (match) return match[2];
-    return null;
-  }
-  
-  if (getCookie('site_access') === 'granted' && window.location.pathname !== '/') {
-    window.location.href = 'https://thegoosesite.github.io'; 
-  }
-});
-function disclaimer(){
-  console.log(
-    "Hey, you! What are you doing here!\nYou know you're not supposed to be here.\nGo ahead, look at the Javascript source code. See the password?\nNope!"
-  )
-}
 // 3. Main Login and Input Management
 document.addEventListener("DOMContentLoaded", function() {
   const token = "zhpuazdhuznyhukzvu";
@@ -107,10 +90,10 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // FIXED: Synchronized image names with absolute path format
     if (isPassword) {
-      eye.src = '../pages/welcome/icons/eye-close-up.png';
+      eye.src = 'https://thegoosesite.github.io/pages/welcome/icons/eye-close-up.png';
       eye.title = 'Hide Password';
     } else {
-      eye.src = '../pages/welcome/icons/eyebrow.png';
+      eye.src = 'https://thegoosesite.github.io/pages/welcome/icons/eyebrow.png';
       eye.title = 'Show Password';
     }
   });

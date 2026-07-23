@@ -30,3 +30,11 @@ body{
 .small{
     font-size:12px !important;
 }
+.fade-element {
+  opacity: 1;
+  transition: opacity 0.5s ease; /* Controls the speed of the fade */
+}
+
+.fade-out {
+  opacity: 0;
+}

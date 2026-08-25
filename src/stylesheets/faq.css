@@ -1,0 +1,53 @@
+
+details summary {
+  list-style: none;
+}
+details summary::-webkit-details-marker {
+  display: none; /* Safari fallback */
+}
+
+summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size:25px;
+  font-weight: 900;
+  user-select: none;
+  -moz-user-select: none;
+}
+details{
+    box-shadow: 0 10px 30px rgba(51, 51, 51, 0.5);
+    background-color: (255, 255, 255, 0.1);
+    padding:3px;
+    padding-left:5px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.search-item a {
+    color:#333;
+    text-decoration: underline;
+}
+summary::after {
+  content: "→"; 
+  text-decoration: none !important;
+  font-size: 0.8em;
+  transition: transform 0.2s ease; 
+}
+
+details[open] summary::after {
+  transform: rotate(90deg);
+}
+details[open] summary span{
+    text-decoration: underline;
+}
+details p {
+    font-size:20px;
+}
+.faq-container{
+    display:flex;
+    flex-direction: column;
+    gap:8px;
+}
+.transparent-box-main h1 {
+    margin-bottom:5px;
+}

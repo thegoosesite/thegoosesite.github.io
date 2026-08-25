@@ -1,0 +1,36 @@
+body{
+    cursor: url('https://cdn.custom-cursor.com/db/4129/32/arrow2402.png'), pointer !important;
+    cursor: url('https://cdn.custom-cursor.com/db/4130/32/arrow2402.png'), default !important;
+    font-family: 'Goose Playfair' !important;
+}
+a, button, details:hover, details summary:hover, .blurred-span a, .blurred-span, nav section ul li .div img{
+    cursor: url('https://cdn.custom-cursor.com/db/4129/32/arrow2402.png'), pointer !important
+}
+@font-face {
+  font-family: 'Goose Playfair';
+  src: url('/src/fonts/default.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 2. Register the Italic font file */
+@font-face {
+  font-family: 'Goose Playfair';
+  src: url('/src/fonts/default.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic; /* Maps this specific file to italic text */
+}
+p, i, em, strong, b{
+    font-size:25px;
+}
+h1 {
+    font-size:35px;
+}
+h1, h2, p, h3, h4, h5, h6, strong, b, em, i, mark, u, blink, img, a{
+    padding:0;
+    margin:0;
+}
+i, em {
+    display: inline-block;
+    transform: skewX(-15deg) !important;
+}

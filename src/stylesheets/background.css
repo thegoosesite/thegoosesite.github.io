@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+    padding:0;
+    overflow-x:hidden;
+    min-height: 100vh; 
+    background-color: #000;
+}
+article{
+    display:flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.7);
+    z-index:999999;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    /*
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;*/
+    border-radius: 3px;
+    position:relative;
+
+}
+
+footer {
+  margin-top: auto; /* Pushes the footer to the bottom */
+}
+.bg-slide {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    /* Smooth 1s fade and 5s constant zoom */
+    transition: opacity 1s ease-in-out, transform 5s linear;
+    transform: scale(1);
+    z-index: -1;
+    filter:blur(2px);
+}
+
+/* Active state triggers fade-in and zoom */
+.bg-slide.active {
+    opacity: 1;
+    transform: scale(1.15);
+}

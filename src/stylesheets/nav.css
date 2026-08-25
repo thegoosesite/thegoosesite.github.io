@@ -130,5 +130,6 @@ footer ul li ul {
     display:flex;
     gap:7px;
     flex-direction: column;
+    list-style-type:'🪿' !important;
 
 }

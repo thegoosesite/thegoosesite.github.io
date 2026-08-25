@@ -1,0 +1,7 @@
+.society-ul li::marker {
+    font-size:30px;
+}
+.society-ul{
+    list-style-type: '🪿';
+    list-style: '🪿';
+}

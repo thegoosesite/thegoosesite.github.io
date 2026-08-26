@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", function(){
   }
 });
 
-// Iframe shi
+// Iframe J(ump)S(care)
 document.addEventListener("DOMContentLoaded", function(){
   const secret = document.querySelector("footer ul li:nth-child(3) ul li:nth-child(4) a");
   document.body.insertAdjacentHTML('beforeend', "<iframe class='secret-iframe' allow='autoplay' src='/secret/index.html'></iframe>");
@@ -129,10 +129,16 @@ document.addEventListener("DOMContentLoaded", function(){
       const iframe = document.querySelector(".secret-iframe");
       iframe.style.display = "inline-block";
       iframe.contentWindow.postMessage('playAudio', '*');
-      
+      window.addEventListener("message", (e) =>{
+        if (e.data === 'jumpscareFinished') {
+          iframe.style.display = "none";
+          window.location.reload();
+        }
+      })
     });
   }
 });
+
 document.addEventListener("DOMContentLoaded", function(){
   const track = document.querySelector(".marquee-track");
   if (Math.random() > 0.5) {

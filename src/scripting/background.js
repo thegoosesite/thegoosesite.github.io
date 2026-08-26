@@ -133,3 +133,11 @@ document.addEventListener("DOMContentLoaded", function(){
     });
   }
 });
+document.addEventListener("DOMContentLoaded", function(){
+  const track = document.querySelector(".marquee-track");
+  if (Math.random() > 0.5) {
+    track.classList.add("m-t-reverse");
+  } else {
+    track.classList.add("m-t-normal")
+  }
+});

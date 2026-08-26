@@ -128,9 +128,13 @@ document.addEventListener("DOMContentLoaded", function(){
       event.preventDefault();
       const iframe = document.querySelector(".secret-iframe");
       iframe.style.display = "inline-block";
+      const title = document.querySelector("title");
+      let title_old = title.textContent;
+      title.textContent = "...";
       iframe.contentWindow.postMessage('playAudio', '*');
       window.addEventListener("message", (e) =>{
         if (e.data === 'jumpscareFinished') {
+          title.textContent = title_old;
           iframe.style.display = "none";
           window.location.reload();
         }

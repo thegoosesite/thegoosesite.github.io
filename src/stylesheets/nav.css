@@ -129,6 +129,10 @@ footer ul li strong{
 footer ul li ul li a {
     font-size:17px;
     color:rgb(27, 27, 49);
+    text-decoration: none;
+}
+footer ul li ul li a:hover {
+    text-decoration:underline;
 }
 footer ul li ul {
     padding:1px;

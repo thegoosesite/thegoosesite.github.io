@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function(){
 // Iframe shi
 document.addEventListener("DOMContentLoaded", function(){
   const secret = document.querySelector("footer ul li:nth-child(3) ul li:nth-child(4) a");
-  document.body.insertAdjacentHTML('beforeend', "<iframe class='secret-iframe' src='/secret/index.html'></iframe>");
+  document.body.insertAdjacentHTML('beforeend', "<iframe class='secret-iframe' allow='autoplay' src='/secret/index.html'></iframe>");
   if (secret) { 
     secret.addEventListener('click', function(event){
       event.preventDefault();

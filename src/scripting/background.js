@@ -118,3 +118,18 @@ document.addEventListener("DOMContentLoaded", function(){
     thing.href = "/info/queries";
   }
 });
+
+// Iframe shi
+document.addEventListener("DOMContentLoaded", function(){
+  const secret = document.querySelector("footer ul li:nth-child(3) ul li:nth-child(4) a");
+  document.body.insertAdjacentHTML('beforeend', "<iframe class='secret-iframe' src='/secret/index.html'></iframe>");
+  if (secret) { 
+    secret.addEventListener('click', function(event){
+      event.preventDefault();
+      const iframe = document.querySelector(".secret-iframe");
+      iframe.style.display = "inline-block";
+      iframe.contentWindow.postMessage('playAudio', '*');
+      
+    });
+  }
+});

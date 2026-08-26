@@ -1,0 +1,28 @@
+.transparent-box-main ul{
+    list-style-type: '🪿';
+    list-style: '🪿';
+}
+.transparent-box-main ul li a {
+    font-size:22px;
+    color: #333;
+    text-decoration: underline;
+}
+.transparent-box-main ul li::marker {
+    font-size: 22px;
+}
+iframe {
+    margin:0 auto;
+    border:none;
+    box-shadow: 0 10px 30px rgba(51, 51, 51, 0.4);
+    border-radius: 5px;
+}
+#\/simon iframe{
+    width:600px;
+    height:600px
+}
+#\/simon{
+    min-width:600px !important;
+}
+.game {
+    margin-top:10px;
+}

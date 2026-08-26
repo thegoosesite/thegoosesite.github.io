@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Simon Standalone Iframe</title> 
+        <style class="styles-css">
+            :root {
+                /* Set default colours to match gooz plumage */
+
+                /** Orange (Embden) **/
+                --orange-base: #ff8c00;
+                --orange-neon: #f29c33;
+
+                /** White (Canada/Embden) **/
+                --white-base: #DCDCDC;
+                --white-neon: #FFFFFF;
+
+                /** Green (Pygmy) **/
+                --green-base: #265c3e;
+                --green-neon: #1e7f49;
+
+                /** Brown (Canada) **/
+                --brown-base: #5e3d22;
+                --brown-neon: #8e501d;
+            }
+            body{
+                /* BG Colour (kept from CWK) */
+                background-color:#858383;
+
+                /* Align board to center */
+                display:flex;
+                justify-content: center;
+                align-items:center;
+                
+                /* Height and width */
+                height:100vh; /* Better than 100% imo */
+                margin:0; 
+                padding:0;
+                font-family: 'Courier New', monospace, Courier; /* Retro arcade vibe */
+            }
+
+            .game-container {
+                position:relative; /* So the pads can fit inside the parent */
+                display:grid;
+                grid-template-columns: repeat(2, 180px);
+                grid-template-rows: repeat(2, 180px);
+                gap: 15px;
+                background-color: #222;
+                padding: 20px;
+                border-radius: 50%;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+            }
+            .pad, [name='pad'] {
+                cursor: url('https://cdn.custom-cursor.com/db/4129/32/arrow2402.png'), pointer !important;
+                transition: background-color 0.1s ease; /* Clicky FX */
+            }
+
+            /* Solid colours (default) */
+            .orange {
+                background-color: var(--orange-base);
+                border-top-left-radius:100%;
+            }
+
+            .white {
+                background-color: var(--white-base);
+                border-top-right-radius:100%;
+            }
+
+            .green {
+                background-color: var(--green-base);
+                border-bottom-left-radius:100%;
+            }
+
+            .brown {
+                background-color: var(--brown-base);
+                border-bottom-right-radius: 100%;
+            }
+
+            /* Lit colours (clicked) */
+            .orange.active {
+                background-color: var(--orange-neon);
+            }
+            .white.active {
+                background-color: var(--white-neon);
+            }
+            .green.active {
+                background-color: var(--green-neon);
+            }
+            .brown.active{
+                background-color: var(--brown-neon);
+            }
+
+            .center-circle {
+                position: absolute;
+                /* Fallback just in case flexbox doesn't work */
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+
+                width: 160px; height: 160px;
+                background-color: #ece7e2;
+                border: 12px solid #222;
+                border-radius: 50%;
+                /* Flexbox */
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                z-index: 10;
+                box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+            }
+
+            /* Updated selector from #title to #brand to match HTML */
+            #brand span:nth-child(1){
+                color:orangered !important;
+                -webkit-text-stroke: 0.3px black;
+            }
+
+            #brand span:nth-child(2){
+                color:black !important
+            }
+
+            #brand{
+                font-size:22px;
+                margin: 0;
+                white-space: nowrap;
+            }
+
+            #brand span {
+                white-space: nowrap;
+            }
+
+            /* Kept from CWK OG */
+            #score {
+                font-size: 32px;
+                color: #dc0d0d;
+                -webkit-text-stroke:0.2px black;
+                margin: 5px 0; 
+                font-family: monospace;
+            }
+            
+            #start-btn {
+                padding: 6px 18px;
+                font-weight: bold;
+                background-color: #fff;
+                border: 2px solid #333;
+                cursor: pointer;
+                border-radius: 4px;
+                transition: background-color 0.2s;
+            }
+
+            #start-btn:hover {
+                background-color: #eee; 
+            }
+
+            #start-btn:active { 
+                background-color: #ddd;
+            }
+
+        </style>
+        <script>
+            document.addEventListener("DOMContentLoaded", function(){
+                let auxCtx = null;
+                // Set frequencies (100% from cwk I don't know wtf this is)
+                const frequencies = { orange: 415, white: 310, green: 252, brown: 209, error: 42 };
+
+                // Variables
+                let jumpscaresEnabled = false;
+                let simonSequence = [];
+                let playerSequence = [];
+                let round = 0;
+                let isPlayingSequence = false; // Renamed to match usage in code
+                const colours = ["orange", "white", "green", "brown"];
+
+                // Fetchers
+                const scoreDisplay = document.querySelector("#score");
+                const startButton = document.querySelector("#start-btn");
+                const pads = document.querySelectorAll(".pad");
+
+                function playTone(freq, duration) {
+                    if (!auxCtx) return;
+                    
+                    const osc = auxCtx.createOscillator();
+                    const gain = auxCtx.createGain();
+                    
+                    osc.connect(gain);
+                    gain.connect(auxCtx.destination);
+                    
+                    osc.frequency.value = freq;
+                    osc.type = 'triangle'; // Clean retro tone profile
+                    
+                    osc.start();
+                    gain.gain.setValueAtTime(0.3, auxCtx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.001, auxCtx.currentTime + duration / 1000);
+                    osc.stop(auxCtx.currentTime + duration / 1000);
+                }
+
+                // Flash pad
+                function flashPad(colour){
+                    // Light a pad and play its corresponding sound
+                    const pad = document.querySelector(`.${colour}`);
+                    if (!pad) return;
+
+                    pad.classList.add('active');
+                    playTone(frequencies[colour], 300);
+
+                    // Timeout to un-light pad after flash
+                    setTimeout(() => {
+                        pad.classList.remove('active');
+                    }, 300);
+                }
+
+                // Play sequence
+                function playSequence(){
+                    isPlayingSequence = true;
+                    let delay = 600;
+                    simonSequence.forEach((colour, index) => {
+                        setTimeout(() => {
+                            flashPad(colour);
+
+                            // Re-enable player controls
+                            if (index === simonSequence.length - 1) {
+                                setTimeout(() => { 
+                                    isPlayingSequence = false; 
+                                }, 400);
+                            }
+                        }, index * delay);
+                    });
+                }
+
+                // New round
+                function nextSimonRound(){
+                    // Set up (.exe)
+                    playerSequence = [];
+                    round = round + 1;
+                    scoreDisplay.innerText = `${(round < 10 ? '0' + round : round)}`;
+
+                    // Get random colour
+                    const randomColour = colours[Math.floor(Math.random() * 4)];
+                    simonSequence.push(randomColour);
+
+                    // Pause. (for .6 secs)
+                    setTimeout(playSequence, 600);
+                }
+
+                // Main game method 
+                function newSimon(){
+                    simonSequence = [];
+                    round = 0;
+                    startButton.innerText = "RESET";
+                    nextSimonRound();
+                }
+
+                // Added missing validation function
+                function checkPlayerInput(currentIndex) {
+                    if (playerSequence[currentIndex] !== simonSequence[currentIndex]) {
+                        playTone(frequencies.error, 800);
+                        scoreDisplay.innerText = "!!";
+                        simonSequence = [];
+                        playerSequence = [];
+                        startButton.innerText = "START";
+                        isPlayingSequence = false;
+                        if (jumpscaresEnabled){
+                            setTimeout(() => {
+                                window.parent.location.href = "/secret";
+                                window.location.href = "/secret";
+                            }, 500);
+                        }
+                        return; // Restart
+                    }
+
+                    if (playerSequence.length === simonSequence.length) {
+                        setTimeout(nextSimonRound, 1000);
+                    }
+                }
+                
+                // Start the game function()
+                startButton.addEventListener("click", function(){
+                    if (!auxCtx){
+                        auxCtx = new (window.AudioContext || window.webkitAudioContext)();
+                    }
+                    newSimon(); // Allow resetting on click
+                });
+
+                pads.forEach(pad => {
+                    pad.addEventListener('click', (e) => {
+                        // Discard mouse interaction while sequence flashes or before start
+                        if (isPlayingSequence || simonSequence.length === 0) return; 
+                        
+                        const clickedColour = e.target.getAttribute('data-colour');
+                        flashPad(clickedColour);
+                        playerSequence.push(clickedColour);
+                        
+                        checkPlayerInput(playerSequence.length - 1);
+                    });
+                });
+
+            });
+        </script>
+    </head>
+    <body>
+        <div class="game-container">
+            
+            <div class="center-circle">
+                <h1 id="brand">
+                    <span>GOOSE</span>
+                    <br>
+                    <span>Simon</span>
+                </h1>
+                <div id="score">--</div>
+                <button id="start-btn">START</button>
+            </div>
+
+            <div class="pad orange" data-colour="orange"></div>
+            <div class="pad white" data-colour="white"></div>
+            <div class="pad green" data-colour="green"></div>
+            <div class="pad brown" data-colour="brown"></div>
+        </div>
+    </body>
+</html>

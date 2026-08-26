@@ -126,6 +126,7 @@ document.addEventListener("DOMContentLoaded", function(){
   if (secret) { 
     secret.addEventListener('click', function(event){
       event.preventDefault();
+      document.body.style.overflow = "hidden";
       const iframe = document.querySelector(".secret-iframe");
       iframe.style.display = "inline-block";
       const title = document.querySelector("title");

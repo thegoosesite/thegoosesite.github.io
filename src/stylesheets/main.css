@@ -72,10 +72,10 @@ main{
   background-color:rgba(241, 139, 14, 0.7);
 }
 .m-t-normal{
-  animation: marquee-scroll 2.5s linear infinite;
+  animation: marquee-scroll 8s linear infinite;
 }
 .m-t-reverse{ 
-  animation: marquee-scroll 2.5s linear infinite reverse;
+  animation: marquee-scroll 8s linear infinite reverse;
 }
 
 @keyframes marquee-scroll {

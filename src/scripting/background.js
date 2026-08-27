@@ -120,36 +120,52 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 
 // Iframe J(ump)S(care)
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", function () {
   const secret = document.querySelector("footer ul li:nth-child(3) ul li:nth-child(4) a");
-  document.body.insertAdjacentHTML('beforeend', "<iframe class='secret-iframe' allow='autoplay' src='/secret/index.html'></iframe>");
-  if (secret) { 
-    secret.addEventListener('click', function(event){
+
+  // 1. Inject the iframe
+  document.body.insertAdjacentHTML(
+    'beforeend',
+    "<iframe class='secret-iframe' allow='autoplay' src='/secret/index.html'></iframe>"
+  );
+
+  if (secret) {
+    // 2. Attach the click listener
+    secret.addEventListener('click', function (event) {
       event.preventDefault();
       document.body.style.overflow = "hidden";
       const iframe = document.querySelector(".secret-iframe");
       iframe.style.display = "inline-block";
+      
       const title = document.querySelector("title");
-      let title_old = title.textContent;
-      title.textContent = "...";
+      let title_old = title ? title.textContent : "";
+      if (title) title.textContent = "...";
+      
       iframe.contentWindow.postMessage('playAudio', '*');
-      window.addEventListener("message", (e) =>{
+
+      window.addEventListener("message", (e) => {
         if (e.data === 'jumpscareFinished') {
           const params = new URLSearchParams(window.location.search);
-          window.history.replaceState(null, '', window.location.pathname); // Clears j(ump)s(care) search params
-          title.textContent = title_old;
+          window.history.replaceState(null, '', window.location.pathname);
+          if (title) title.textContent = title_old;
           iframe.style.display = "none";
-          if (!params.has('photos')){
+          
+          if (!params.has('photos')) {
             window.location.reload();
           } else {
             window.history.back();
           }
         }
-      })
+      });
     });
+
+    // 3. Check for the URL param AFTER the listener is set up
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('photos')) {
+      secret.click();
+    }
   }
 });
-
 document.addEventListener("DOMContentLoaded", function(){
   const track = document.querySelector(".marquee-track");
   if (Math.random() > 0.5) {
@@ -159,10 +175,3 @@ document.addEventListener("DOMContentLoaded", function(){
   }
 });
 
-document.addEventListener("DOMContentLoaded", function(){
-  const clicky = document.querySelector("footer ul li:nth-child(3) ul li:nth-child(4) a");
-  const urlParams = new URLSearchParams(window.location.search);
-  if (urlParams.has('photos')){
-    clicky.click();
-  }
-});

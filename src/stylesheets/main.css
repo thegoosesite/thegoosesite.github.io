@@ -19,6 +19,13 @@ wrapper aside{
   transform: translate(-50%, -50%);
 
 }
+.header-ul {
+  list-style: '🪿';
+  list-style-type: '🪿';
+}
+.header-ul li::marker, .header-ul li p{
+  font-size:24px;
+}
 .blurred-span b{
   font-size:1em;
 }

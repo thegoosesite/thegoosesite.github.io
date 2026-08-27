@@ -135,9 +135,15 @@ document.addEventListener("DOMContentLoaded", function(){
       iframe.contentWindow.postMessage('playAudio', '*');
       window.addEventListener("message", (e) =>{
         if (e.data === 'jumpscareFinished') {
+          const params = new URLSearchParams(window.location.search);
+          window.history.replaceState(null, '', window.location.pathname); // Clears j(ump)s(care) search params
           title.textContent = title_old;
           iframe.style.display = "none";
-          window.location.reload();
+          if (!params.has('photos')){
+            window.location.reload();
+          } else {
+            window.history.back();
+          }
         }
       })
     });
@@ -150,5 +156,13 @@ document.addEventListener("DOMContentLoaded", function(){
     track.classList.add("m-t-reverse");
   } else {
     track.classList.add("m-t-normal")
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function(){
+  const clicky = document.querySelector("footer ul li:nth-child(3) ul li:nth-child(4) a");
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.has('photos')){
+    clicky.click();
   }
 });

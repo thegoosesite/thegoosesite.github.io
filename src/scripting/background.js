@@ -174,4 +174,10 @@ document.addEventListener("DOMContentLoaded", function(){
     track.classList.add("m-t-normal")
   }
 });
+document.addEventListener("DOMContentLoaded", function () {
+  const trademarkShown = false; // Dev note: Change when needed
+  if (!trademarkShown){
+    document.querySelector("footer section span").remove();
+  }
+});
 

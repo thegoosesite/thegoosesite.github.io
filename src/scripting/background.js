@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", function(){
 document.addEventListener("DOMContentLoaded", function () {
   const trademarkShown = false; // Dev note: Change when needed
   if (!trademarkShown){
-    document.querySelector("footer section span").remove();
+    document.querySelector("footer span:nth-child(1)").remove();
   }
 });
 

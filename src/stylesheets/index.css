@@ -1,28 +1,13 @@
-nav ul li:nth-child(1) .div a {
-    text-decoration: none;
-    font-weight: 900;
-    font-size: 50px;
-    color: transparent;
-    background: linear-gradient(to left, #FFA500, #FF8C00, darkorange, #bdde85, #74da74, #4dcc4d);
-    background-clip: text;
-    -moz-background-clip: text;
-    -webkit-background-clip: text;
-    letter-spacing: -0.04em;
-    -webkit-text-stroke: 0.5px black;
-    
-    /* 1. Required to position the underline relative to the text */
-    position: relative; 
-    display: inline-block; /* Ensures the width calculations work perfectly */
-}
-
-nav ul li:nth-child(1) .div a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    width:100%;
-    bottom: 1px; 
-    height: 4px; 
-    background: linear-gradient(to left, #FFA500, #FF8C00, darkorange, #bdde85, #74da74, #4dcc4d); 
-    border: 0.5px solid black; 
-    box-sizing: border-box;
-}
+/*@media screen and (min-width: 992px) {*/
+    nav ul li:nth-child(1) .div a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width:100%;
+        bottom: 1px; 
+        height: 4px; 
+        background: linear-gradient(to left, #FFA500, #FF8C00, darkorange, #bdde85, #74da74, #4dcc4d); 
+        border: 0.5px solid black; 
+        box-sizing: border-box;
+    }
+/*}*/

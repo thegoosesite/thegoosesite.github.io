@@ -143,3 +143,6 @@ footer ul li ul {
     list-style-type:'🪿' !important;
 
 }
+nav section ul li:nth-last-child(1) a::before, nav section ul li:nth-last-child(1) a u::before {
+    content:"Search "
+}

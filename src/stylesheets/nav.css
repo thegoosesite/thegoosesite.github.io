@@ -144,5 +144,6 @@ footer ul li ul {
 
 }
 nav section ul li:nth-last-child(1) a::before, nav section ul li:nth-last-child(1) a u::before {
-    content:"Search "
+    content:"Search ";
+    color:black;
 }

@@ -13,7 +13,7 @@
 }
 
 .carousel-slide img {
-    max-height: 350px; /* Adjust this value down (e.g., 200px or 250px) to make images shorter */
+    max-height: 420px; /* Adjust this value down (e.g., 200px or 250px) to make images shorter */
     width: auto;       /* Maintains aspect ratio without stretching */
     object-fit: cover; /* Ensures images fill their container neatly */
     margin: 0 auto;    /* Centers the image horizontally */

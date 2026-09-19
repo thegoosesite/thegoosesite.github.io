@@ -1,6 +1,6 @@
 .carousel {
   position: relative;
-  max-width: 800px;
+  max-width: 600px;
   margin: 0 auto;
   overflow: hidden; /* Hides images outside the view box */
   border-radius: 8px;
@@ -10,6 +10,13 @@
   display: flex;
   transition: transform 0.5s ease-in-out; /* Creates the smooth sliding animation */
   width: 100%;
+}
+
+.carousel-slide img {
+    max-height: 350px; /* Adjust this value down (e.g., 200px or 250px) to make images shorter */
+    width: auto;       /* Maintains aspect ratio without stretching */
+    object-fit: cover; /* Ensures images fill their container neatly */
+    margin: 0 auto;    /* Centers the image horizontally */
 }
 
 .carousel-slide {
